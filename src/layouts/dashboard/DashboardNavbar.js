@@ -39,7 +39,7 @@ export default function DashboardNavbar({ onOpenSidebar }) {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static" color="inherit">
           <ToolbarStyle>
-            <IconButton onClick={onOpenSidebar} sx={{ mr: 1, display: { lg: 'none' } }}>
+            <IconButton onClick={onOpenSidebar} sx={{ color: 'white', mr: 1, display: { lg: 'none' } }}>
               <Iconify icon="eva:menu-2-fill" />
             </IconButton>
 
