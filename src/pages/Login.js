@@ -76,7 +76,7 @@ export default function Login() {
         {mdUp && (
           <SectionStyle>
             <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
-              Hi, Welcome Back
+              Hi, Welcome To PortFolio
             </Typography>
             <img src="/static/illustrations/illustration_login.png" alt="login" />
           </SectionStyle>
@@ -84,14 +84,8 @@ export default function Login() {
 
         <Container maxWidth="sm">
           <ContentStyle>
-            <Typography variant="h4" gutterBottom>
-              Sign in to Site
-            </Typography>
-
             <Typography sx={{ color: 'text.secondary', mb: 4 }}>Enter your details below.</Typography>
-
             <LoginForm />
-
             {!smUp && (
               <Typography variant="body2" align="center" sx={{ mt: 3 }}>
                 Don’t have an account?{' '}

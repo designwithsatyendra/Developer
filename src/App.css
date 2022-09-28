@@ -52,18 +52,54 @@ ul li::before {
     margin-left: -1em;
 }
 
-.wavehand{
-        animation-duration: 2s;
-        animation-iteration-count: infinite;
-        -webkit-animation-name: wave-animation;
-        animation-name: wave-animation;
-        display: inline-block;
-        transform-origin: 70% 70%;
-    }
+
+    .wavehand {
+            animation-name: wave-animation;
+            animation-duration: 2.5s;
+            animation-iteration-count: infinite;
+            transform-origin: 70% 70%;
+            display: inline-block;
+        }
+    
+        @keyframes wave-animation {
+            0% {
+                transform: rotate(0.0deg)
+            }
+    
+            10% {
+                transform: rotate(14.0deg)
+            }
+    
+            20% {
+                transform: rotate(-8.0deg)
+            }
+    
+            30% {
+                transform: rotate(14.0deg)
+            }
+    
+            40% {
+                transform: rotate(-4.0deg)
+            }
+    
+            50% {
+                transform: rotate(10.0deg)
+            }
+    
+            60% {
+                transform: rotate(0.0deg)
+            }
+    
+            100% {
+                transform: rotate(0.0deg)
+            }
+        }
+
+
 #mypro{
    
     border-radius: 10px;
-    height: 300px;
+    height: 220px;
     vertical-align: middle;
     
 }
@@ -76,14 +112,24 @@ ul li::before {
         width: max-content;
 }
 .cardhover:hover{
- background: inherit;
+background: transparent;
 transition: all 0.5s ease;
 cursor: pointer;
+transition: all 0.3s ease;
+-webkit-transition: all 0.3s ease 0s;
+-moz-transition: all 0.3s ease 0s;
+-o-transition: all 0.3s ease 0s;
+box-shadow: 0 2rem 2rem 0 rgba(7, 234, 67, 0.3);
+transform: scale(0.96);
+border-top: 5px solid yellowgreen;
+border-bottom: 5px solid yellowgreen;
+color: white;
 
 }
+
 #mynamestyle{
-    color: #673ab7;
-font-family: 'Love Light', cursive;
+    color: #0de22a;
+    font-family: 'Love Light', cursive;
     font-size: 30px;
 
 }

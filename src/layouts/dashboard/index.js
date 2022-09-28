@@ -2,8 +2,6 @@ import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 // material
 import { styled } from '@mui/material/styles';
-//
-import Footer from '../../pages/Footer';
 import DashboardNavbar from './DashboardNavbar';
 import DashboardSidebar from './DashboardSidebar';
 
@@ -45,7 +43,6 @@ export default function DashboardLayout() {
           <Outlet />
         </MainStyle>
       </RootStyle>
-      <Footer />
     </>
   );
 }

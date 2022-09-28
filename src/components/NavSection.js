@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink as RouterLink, matchPath, useLocation } from 'react-router-dom';
-// material
 import { alpha, useTheme, styled } from '@mui/material/styles';
 import { Box, List, Collapse, ListItemText, ListItemIcon, ListItemButton } from '@mui/material';
-//
 import Iconify from './Iconify';
 
 // ----------------------------------------------------------------------
@@ -48,13 +46,13 @@ function NavItem({ item, active }) {
   };
 
   const activeRootStyle = {
-    color: 'primary.main',
+    color: 'text-secondary ',
     fontWeight: 'fontWeightMedium',
-    bgcolor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity),
+    bgcolor: alpha(theme.palette.success.main, theme.palette.action.selectedOpacity),
   };
 
   const activeSubStyle = {
-    color: 'text.primary',
+    color: 'text-secondary ',
     fontWeight: 'fontWeightMedium',
   };
 

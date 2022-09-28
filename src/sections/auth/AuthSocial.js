@@ -28,6 +28,11 @@ export default function AuthSocial() {
       icon: 'fa6-brands:instagram-square',
       color: '#1877F2',
     },
+    {
+      path: '/dashboard/education',
+      icon: 'fa:github-alt',
+      color: '#1C2CEA',
+    },
   ];
 
   return (

@@ -9,7 +9,7 @@ const Service = () => (
       <Container maxWidth="xl">
         <Box style={{ display: 'flex', justifyContent: 'center' }}>
           <Typography className="about" variant="h6" sx={{ mb: 5 }}>
-            What Do We Offer
+            Technical Skill's
           </Typography>
         </Box>
         <Grid container spacing={3}>

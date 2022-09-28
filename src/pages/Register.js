@@ -66,7 +66,7 @@ export default function Register() {
           {smUp && (
             <Typography variant="body2" sx={{ mt: { md: -2 } }}>
               Already have an account?
-              <Link variant="subtitle2" component={RouterLink} to="/login">
+              <Link variant="subtitle2" component={RouterLink} to="/">
                 Login
               </Link>
             </Typography>
@@ -76,7 +76,7 @@ export default function Register() {
         {mdUp && (
           <SectionStyle>
             <Typography variant="h5" sx={{ px: 5, mt: 10, mb: 5 }}>
-              Manage the job more effectively with profile
+              I Am 👉 Software Developer
             </Typography>
             <img alt="register" src="/static/illustrations/illustration_register.png" />
           </SectionStyle>
@@ -84,7 +84,7 @@ export default function Register() {
 
         <Container>
           <ContentStyle>
-            <Typography variant="h4" gutterBottom>
+            <Typography variant="h5" gutterBottom>
               Please Register Here
             </Typography>
             <RegisterForm />

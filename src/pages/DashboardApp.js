@@ -1,54 +1,80 @@
-import { Grid, Container, Typography, Box, Button, Card } from '@mui/material';
+import { Grid, Container, Typography, Box, Stack, Button, Card } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
 import Typical from 'react-typical';
+import AuthSocial from '../sections/auth/AuthSocial';
 import account from '../_mock/account';
 import Page from '../components/Page';
 import { AppWidgetSummary } from '../sections/@dashboard/app';
-import myphoto from '../image/pooja.png';
+import myphoto from '../image/website2.svg';
 import Resume from './resume.pdf';
 
 export default function DashboardApp() {
   return (
     <Page title="Dashboard">
       <Container maxWidth="xl">
-        <Typography variant="h4" sx={{ mb: 1 }}>
-          Hy! I Am Pooja Singh<span className="wavehand">👋</span>
-        </Typography>
+        <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
+          <Typography id="mynamestyle" variant="h4" sx={{ mb: 1 }}>
+            Hy! I Am Satyendra Singh<span className="wavehand">👋</span>
+          </Typography>
+          <Typography variant="body1" sx={{ mb: 2 }}>
+            Last updated on September 27, 2022
+          </Typography>
+        </Stack>
+
         <Typography style={{ color: 'red' }} variant="h6" sx={{ mb: 2 }}>
           We The Web Developer
         </Typography>
-        <Typography variant="body2" sx={{ mb: 2 }}>
-          <span style={{ color: 'blue' }}>https://www.satyendrapoojarajpoot.in</span> website is all about creativity
-          and innovative work in the field of Technology. We provide web development courses videos, MCS important
-          videos and technology videos and articles. You will get all of my youtube videos source code and you are free
-          to use it and make changes. Please give us your valuable feedback and suggestions. We appreciate your opinions
-          and will use it to evaluate changes and make improvements on our blog
-        </Typography>
+        <box style={{ textAlign: 'justify' }}>
+          <Typography variant="body2" sx={{ mb: 2 }}>
+            <span style={{ color: 'orange' }}>https://www.satyendrapoojarajpoot.in</span> website is all about
+            creativity and innovative work in the field of Technology. We provide web development courses videos, MCS
+            important videos and technology videos and articles. You will get all of my youtube videos source code and
+            you are free to use it and make changes. Please give us your valuable feedback and suggestions. We
+            appreciate your opinions and will use it to evaluate changes and make improvements on our blog
+          </Typography>
+        </box>
+
         <Box sx={{ mb: 3 }}>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={6}>
-              <Typography sx={{ mb: 3 }} variant="body2">
-                My name is pooja Singh Rajpoot. I'm 23years old. I born in Banda, Uttar Pradesh. Currently, I am living
-                in Bengalore, India. In my family, I live with my papa, mummy and one cute sister,and two cute brother,
-                her name is pratibha Singh. I am thankful to God that he gives me such a wonderful family. I am working
-                as a web developer and I am a Youtuber too. I want to share with you my experiences during Colleges, as
-                Web developers and the problems I faced, the solutions I found and the places I went to. I hope my blog
-                will guide you, and give you the knowledge that you are looking to.
-              </Typography>
-
-              <a style={{ textDecoration: 'none' }} href="https://github.com/PoojaSingh2422">
-                <Button style={{ margin: '5px' }} to="/" size="large" variant="contained" startIcon={<GitHubIcon />}>
-                  View On GitHub
-                </Button>
-              </a>
-              <a style={{ textDecoration: 'none' }} href={Resume} download>
-                <Button size="large" variant="contained" startIcon={<DownloadIcon />}>
-                  Download CV
-                </Button>
-              </a>
+              <box style={{ textAlign: 'justify' }}>
+                <Typography sx={{ mb: 3 }} variant="body2">
+                  My name is Satyendra Singh. I'm 23years old. I born in Banda, Uttar Pradesh. Currently, I am living in
+                  Bengalore, India. In my family, I live with my papa, mummy and two cute sister,and one cute brother,
+                  he name is Puspendra Singh. I am thankful to God that he gives me such a wonderful family. I am
+                  working as a web developer and I am a Youtuber too. I want to share with you my experiences during
+                  Colleges, as Web developers and the problems I faced, the solutions I found and the places I went to.
+                  I hope my blog will guide you, and give you the knowledge that you are looking to.
+                </Typography>
+              </box>
+              <Box>
+                <Grid container spacing={3}>
+                  <Grid item xs={12} sm={6} md={6}>
+                    <a style={{ textDecoration: 'none' }} href="https://github.com/PoojaSingh2422">
+                      <Button
+                        to="/"
+                        fullWidth
+                        size="large"
+                        type="submit"
+                        variant="contained"
+                        startIcon={<GitHubIcon />}
+                      >
+                        View On GitHub
+                      </Button>
+                    </a>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={6}>
+                    <a style={{ textDecoration: 'none' }} href={Resume} download>
+                      <Button startIcon={<DownloadIcon />} fullWidth size="large" type="submit" variant="contained">
+                        Download CV
+                      </Button>
+                    </a>
+                  </Grid>
+                </Grid>
+              </Box>
             </Grid>
             <Grid item xs={12} sm={6} md={6}>
               <Box className="blur" style={{ display: 'flex', justifyContent: 'center', padding: '10px' }}>
@@ -97,11 +123,15 @@ export default function DashboardApp() {
             </Grid>
             <Grid item xs={12} sm={6} md={6}>
               <Box style={{ marginTop: '15px' }} sx={{ mb: 5, mx: 2.5 }}>
-                <Typography variant="body2" sx={{ mb: 5 }}>
-                  A passionate Full Stack Software Developer 🚀 having a special interest in Frontend technologies and
-                  experience of building Web applications with HTML, CSS/ JavaScript / Reactjs / Nodejs and some other
-                  tool libraries and frameworks.
-                </Typography>
+                <AuthSocial />
+                <box style={{ textAlign: 'justify' }}>
+                  <Typography variant="body2" sx={{ mb: 5 }}>
+                    A passionate Full Stack Software Developer 🚀 having a special interest in Frontend technologies and
+                    experience of building Web applications with HTML, CSS/ JavaScript / Reactjs / Nodejs and some other
+                    tool libraries and frameworks.
+                  </Typography>
+                </box>
+
                 <Typography variant="h5" sx={{ mb: 3 }}>
                   Here are a few Highlights:
                 </Typography>
@@ -114,23 +144,40 @@ export default function DashboardApp() {
                     <li>Managing database</li>
                   </ul>
                 </div>
-                <a style={{ textDecoration: 'none' }} href="/">
-                  <Button
-                    style={{ margin: '5px' }}
-                    to="/"
-                    size="large"
-                    color="warning"
-                    variant="contained"
-                    startIcon={<EmojiPeopleIcon />}
-                  >
-                    Hire Me
-                  </Button>
-                </a>
-                <a style={{ textDecoration: 'none' }} href={Resume} download>
-                  <Button size="large" color="warning" variant="contained" startIcon={<PictureAsPdfIcon />}>
-                    Get Resume
-                  </Button>
-                </a>
+
+                <Box>
+                  <Grid container spacing={3}>
+                    <Grid item xs={12} sm={6} md={6}>
+                      <a style={{ textDecoration: 'none' }} href="/">
+                        <Button
+                          to="/"
+                          fullWidth
+                          size="large"
+                          type="submit"
+                          variant="contained"
+                          color="warning"
+                          startIcon={<EmojiPeopleIcon />}
+                        >
+                          Hire Me
+                        </Button>
+                      </a>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={6}>
+                      <a style={{ textDecoration: 'none' }} href={Resume} download>
+                        <Button
+                          fullWidth
+                          size="large"
+                          type="submit"
+                          variant="contained"
+                          color="warning"
+                          startIcon={<PictureAsPdfIcon />}
+                        >
+                          Get Resume
+                        </Button>
+                      </a>
+                    </Grid>
+                  </Grid>
+                </Box>
               </Box>
             </Grid>
           </Grid>
@@ -139,7 +186,7 @@ export default function DashboardApp() {
         <br />
         <Box style={{ display: 'flex', justifyContent: 'center' }}>
           <Typography className="about" variant="h6" sx={{ mb: 5 }}>
-            What Do We Offer
+            My Technical Skill's
           </Typography>
         </Box>
         <Grid container spacing={3}>

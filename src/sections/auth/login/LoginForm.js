@@ -1,9 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-// @mui
-import { Link, Stack, Box, TextField, Button } from '@mui/material';
+import { Link, Stack, TextField, Button } from '@mui/material';
 
-// ----------------------------------------------------------------------
 import { UserContext } from '../../../App';
 
 export default function LoginForm() {
@@ -14,31 +12,32 @@ export default function LoginForm() {
 
   const loginUser = async (e) => {
     e.preventDefault();
-
-    const res = await fetch('/signin', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    });
-
-    const data = res.json();
-
-    if (res.status === 400 || !data) {
-      console.log('error');
+    if (!email || !password) {
+      window.alert('please fill data properly');
     } else {
-      dispatch({ type: 'USER', payload: true });
-      console.log('logged');
-      navigate('/dashboard/app');
+      const res = await fetch('/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
+
+      const data = res.json();
+      if (res.status === 400 || !data) {
+        console.log('error');
+      } else {
+        dispatch({ type: 'USER', payload: true });
+        navigate('/dashboard/app');
+      }
     }
   };
 
   return (
-    <Box>
+    <>
       <form method="POST">
         <Stack spacing={3}>
           <TextField
@@ -73,6 +72,6 @@ export default function LoginForm() {
           Signin
         </Button>
       </form>
-    </Box>
+    </>
   );
 }

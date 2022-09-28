@@ -1,7 +1,5 @@
 import { alpha } from '@mui/material/styles';
 
-// ----------------------------------------------------------------------
-
 function createGradient(color1, color2) {
   return `linear-gradient(to bottom, ${color1}, ${color2})`;
 }
@@ -122,14 +120,6 @@ const GRADIENTS = {
   error: createGradient(ERROR.light, ERROR.main),
 };
 
-const CHART_COLORS = {
-  violet: ['#826AF9', '#9E86FF', '#D0AEFF', '#F7D2FF'],
-  blue: ['#2D99FF', '#83CFFF', '#A5F3FF', '#CCFAFF'],
-  green: ['#2CD9C5', '#60F1C8', '#A4F7CC', '#C0F2DC'],
-  yellow: ['#FFE700', '#FFEF5A', '#FFF7AE', '#FFF3D6'],
-  red: ['#FF6C40', '#FF8F6D', '#FFBD98', '#FFF2D4'],
-};
-
 const palette = {
   common: { black: '#000', white: '#fff' },
   primary: { ...PRIMARY },
@@ -144,10 +134,9 @@ const palette = {
   pink2: { ...PINK2 },
   grey: GREY,
   gradients: GRADIENTS,
-  chart: CHART_COLORS,
   divider: GREY[500_24],
-  text: { primary: GREY[800], secondary: GREY[600], disabled: GREY[500] },
-  background: { paper: '#fff', default: GREY[200], neutral: GREY[200] },
+  text: { primary: GREY[200], secondary: GREY[200], disabled: GREY[200] },
+  background: { paper: GREY[600], default: GREY[700], neutral: GREY[200] },
   action: {
     active: GREY[600],
     hover: GREY[500_8],

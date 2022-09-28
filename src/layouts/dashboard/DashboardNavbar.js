@@ -39,18 +39,19 @@ export default function DashboardNavbar({ onOpenSidebar }) {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static" color="inherit">
           <ToolbarStyle>
-            <IconButton onClick={onOpenSidebar} sx={{ mr: 1 }}>
+            <IconButton onClick={onOpenSidebar} sx={{ mr: 1, display: { lg: 'none' } }}>
               <Iconify icon="eva:menu-2-fill" />
             </IconButton>
+
             <Typography id="mynamestyle" variant="h5" sx={{ flexGrow: 1 }}>
-              Pooja
+              Satyendra
             </Typography>
 
             <Stack direction="row" alignItems="center" spacing={{ xs: 1.5, sm: 1.5 }}>
-              <NavLink to="/login" style={{ textDecoration: 'none' }}>
+              <NavLink to="/" style={{ textDecoration: 'none', color: '#FFFFFF' }}>
                 Login
               </NavLink>
-              <NavLink to="/register" style={{ textDecoration: 'none' }}>
+              <NavLink to="/register" style={{ textDecoration: 'none', color: '#FFFFFF' }}>
                 Register
               </NavLink>
               <AccountPopover />

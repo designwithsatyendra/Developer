@@ -13,6 +13,12 @@ import navConfig from './NavConfig';
 const DRAWER_WIDTH = 280;
 const DRAWER_HIGHT = '65px';
 
+const RootStyle = styled('div')(({ theme }) => ({
+  [theme.breakpoints.up('lg')]: {
+    flexShrink: 0,
+    width: DRAWER_WIDTH,
+  },
+}));
 const AccountStyle = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
@@ -31,7 +37,7 @@ DashboardSidebar.propTypes = {
 export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
   const { pathname } = useLocation();
 
-  const isDesktop = useResponsive('lg');
+  const isDesktop = useResponsive('up', 'lg');
 
   useEffect(() => {
     if (isOpenSidebar) {
@@ -68,33 +74,36 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
 
   return (
     <>
-      {!isDesktop && (
-        <Drawer
-          open={isOpenSidebar}
-          onClose={onCloseSidebar}
-          PaperProps={{
-            sx: { width: DRAWER_WIDTH, marginTop: DRAWER_HIGHT },
-          }}
-        >
-          {renderContent}
-        </Drawer>
-      )}
+      <RootStyle>
+        {!isDesktop && (
+          <Drawer
+            open={isOpenSidebar}
+            onClose={onCloseSidebar}
+            PaperProps={{
+              sx: { width: DRAWER_WIDTH, marginTop: DRAWER_HIGHT },
+            }}
+          >
+            {renderContent}
+          </Drawer>
+        )}
 
-      {isDesktop && (
-        <Drawer
-          open
-          variant="persistent"
-          PaperProps={{
-            sx: {
-              width: DRAWER_WIDTH,
-              bgcolor: 'background.default',
-              borderRightStyle: 'dashed',
-            },
-          }}
-        >
-          {renderContent}
-        </Drawer>
-      )}
+        {isDesktop && (
+          <Drawer
+            open
+            variant="persistent"
+            PaperProps={{
+              sx: {
+                width: DRAWER_WIDTH,
+                bgcolor: 'background.default',
+                borderRightStyle: 'dashed',
+                marginTop: DRAWER_HIGHT,
+              },
+            }}
+          >
+            {renderContent}
+          </Drawer>
+        )}
+      </RootStyle>
     </>
   );
 }

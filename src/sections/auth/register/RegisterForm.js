@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Button, Stack } from '@mui/material';
@@ -11,7 +10,8 @@ const RegisterForm = () => {
     name: '',
     email: '',
     phone: '',
-    work: '',
+    address: '',
+    role: '',
     password: '',
     cpassword: '',
   });
@@ -26,30 +26,34 @@ const RegisterForm = () => {
 
   const PostData = async (e) => {
     e.preventDefault();
-    const { name, email, phone, work, password, cpassword } = user;
-
-    const res = await axios.post('/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        phone,
-        work,
-        password,
-        cpassword,
-      }),
-    });
-
-    const data = await res.json();
-    // I need to change the data to res
-    if (data.status === 422 || !data) {
-      console.log('INvalid Registration');
+    const { name, email, phone, address, role, password, cpassword } = user;
+    if (!name || !email || !phone || !address || !role || !password || !cpassword) {
+      window.alert('please fill all the field');
     } else {
-      console.log('Successfull Registration');
-      navigate('/login');
+      const res = await fetch('http://localhost:4000/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          address,
+          role,
+          password,
+          cpassword,
+        }),
+      });
+
+      const data = await res.json();
+      // I need to change the data to res
+      if (data.status === 422 || !data) {
+        console.log('INvalid Registration');
+      } else {
+        console.log('Successfull Registration');
+        navigate('/login');
+      }
     }
   };
 
@@ -70,6 +74,16 @@ const RegisterForm = () => {
                 variant="outlined"
               />
               <TextField
+                name="email"
+                type="text"
+                value={user.email}
+                onChange={handleInputs}
+                fullWidth
+                id="outlined-basic"
+                label="email"
+                variant="outlined"
+              />
+              <TextField
                 name="phone"
                 type="number"
                 value={user.phone}
@@ -82,29 +96,29 @@ const RegisterForm = () => {
             </Stack>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
               <TextField
-                name="work"
+                name="address"
                 type="text"
-                value={user.work}
+                value={user.address}
                 onChange={handleInputs}
                 fullWidth
                 id="outlined-basic"
-                label="jo role"
+                label="Address"
                 variant="outlined"
               />
               <TextField
-                name="email"
+                name="role"
                 type="text"
-                value={user.email}
+                value={user.role}
                 onChange={handleInputs}
                 fullWidth
                 id="outlined-basic"
-                label="email"
+                label="job role"
                 variant="outlined"
               />
             </Stack>
 
             <TextField
-              type="password"
+              type="text"
               name="password"
               value={user.password}
               onChange={handleInputs}
@@ -114,7 +128,7 @@ const RegisterForm = () => {
               variant="outlined"
             />
             <TextField
-              type="password"
+              type="text"
               name="cpassword"
               value={user.cpassword}
               onChange={handleInputs}
