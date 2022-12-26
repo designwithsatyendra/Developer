@@ -11,8 +11,8 @@ import DashboardApp from './pages/DashboardApp';
 import Service from './components/service/Service';
 import About from './pages/About';
 import Project from './pages/Project';
-import Experience from './pages/Experience';
-import Education from './pages/Education';
+import SourseCode from './components/soursecode/SourseCode';
+import BlogPage from './components/blogs/BlogPage';
 
 // ----------------------------------------------------------------------
 
@@ -27,15 +27,15 @@ export default function Router() {
         { path: 'about', element: <About /> },
         { path: 'service', element: <Service /> },
         { path: 'project', element: <Project /> },
-        { path: 'experience', element: <Experience /> },
-        { path: 'education', element: <Education /> },
+        { path: 'soursecode', element: <SourseCode /> },
+        { path: 'blogpage', element: <BlogPage /> },
       ],
     },
     {
       path: '/',
       element: <LogoOnlyLayout />,
       children: [
-        // { path: '/', element: <Navigate to="/dashboard/app" /> },
+        { path: '/', element: <Navigate to="/dashboard/app" /> },
         { path: '/', element: <Login /> },
         { path: 'register', element: <Register /> },
         { path: '404', element: <NotFound /> },

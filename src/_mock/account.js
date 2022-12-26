@@ -2,9 +2,9 @@
 
 const account = {
   displayName: 'Satyendra Singh',
-  email: 'Satyendrapoojarajpoot@gmail.com',
-  photoURL: '/static/mock-images/avatars/avatar_default.jpg',
-  myprofile: '/static/illustrations/img1.svg',
+  email: 'designwithsatyendra@gmail.com',
+  photoURL: '/static/images/avatars/avatar_8.jpg',
+  myprofile: '/static/illustrations/undraw_about_us_page_re_2jfm.svg',
 };
 
 export default account;

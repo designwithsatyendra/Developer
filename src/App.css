@@ -104,32 +104,56 @@ ul li::before {
     
 }
 .about{
-   
     border-bottom: 5px solid red;
-        margin-bottom: 30px;
-        padding-bottom: 5px;
-        width: -webkit-max-content;
-        width: max-content;
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+    width: -webkit-max-content;
+    width: max-content;
 }
-.cardhover:hover{
+.cardhover{
 background: transparent;
-transition: all 0.5s ease;
+transition: transform 02s;
 cursor: pointer;
-transition: all 0.3s ease;
--webkit-transition: all 0.3s ease 0s;
--moz-transition: all 0.3s ease 0s;
--o-transition: all 0.3s ease 0s;
-box-shadow: 0 2rem 2rem 0 rgba(7, 234, 67, 0.3);
-transform: scale(0.96);
-border-top: 5px solid yellowgreen;
-border-bottom: 5px solid yellowgreen;
-color: white;
+box-shadow: 0px 10px 10px rgba(188, 92, 92, 0.3);
+color: black;
 
 }
+
+ .cardhover:hover::after {
+     top: 0;
+ }
+
+ .cardhover:hover {
+     transform: translateY(-10px);
+ }
 
 #mynamestyle{
     color: #0de22a;
     font-family: 'Love Light', cursive;
     font-size: 30px;
+     text-align: center;
 
+}
+#mynamestyle1{
+    color: rgba(0, 0, 0, 0.6);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+   
+
+}
+.css-14ckj51{
+    text-align: center;
+}
+.styles_typicalWrapper__1_Uvh::after{
+    color: #ffbd2f;
+    opacity: 1;
+    -webkit-animation: blink 1s infinite;
+    animation: blink 1s infinite;
+    padding-right: '20px';
+}
+#waves{
+    position: absolute;
+    bottom: 0;
+    margin: 0 auto;
 }

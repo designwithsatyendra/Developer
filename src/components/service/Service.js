@@ -5,8 +5,8 @@ import { AppWidgetSummary } from '../../sections/@dashboard/app';
 
 const Service = () => (
   <>
-    <Page title="Dashboard">
-      <Container maxWidth="xl">
+    <Page title="Services">
+      <Container>
         <Box style={{ display: 'flex', justifyContent: 'center' }}>
           <Typography className="about" variant="h6" sx={{ mb: 5 }}>
             Technical Skill's

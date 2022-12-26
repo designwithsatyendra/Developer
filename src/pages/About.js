@@ -8,8 +8,8 @@ import Resume from './resume.pdf';
 
 const About = () => (
   <>
-    <Page title="Dashboard">
-      <Container maxWidth="xl">
+    <Page title="About Me">
+      <Container>
         <Box style={{ display: 'flex', justifyContent: 'center' }}>
           <Typography className="about" variant="h6" sx={{ mb: 5 }}>
             About Me

@@ -10,12 +10,12 @@ const Wrapper = styled.section`
 
   .top-btn {
     font-size: 0.9rem;
-    background: #f8bd09e8;
+    background: #00ff00;
     border-radius: 3px;
     padding: 5px;
-    height: 10rem;
+    height: 12rem;
     position: fixed;
-    bottom: 15rem;
+    bottom: 12rem;
     right: 0.2rem;
     width: 2rem;
     z-index: 999;
@@ -25,6 +25,8 @@ const Wrapper = styled.section`
     cursor: pointer;
     transition: all 0.5s ease 0s;
     color: white;
+    opacity: 0.9;
+    color: black;
 
     & {
       animation: gototop 1.2s linear infinite alternate-reverse;
@@ -43,22 +45,22 @@ const Wrapper = styled.section`
 
 const Support = () => (
   <>
-    <NavLink to="/">
+    <NavLink to="/dashboard/soursecode">
       <Wrapper>
         <div className="top-btn">
           <div className="buttom-btn">
-            <span style={{ color: '#000080' }}>S</span>
+            <span>H</span>
             <br />
-            <span style={{ color: '#000080' }}>U</span>
+            <span>E</span>
+            <br />
+            <span>L</span>
             <br />
             <span>P</span>
             <br />
-            <span>P</span>
             <br />
-            <span style={{ color: '#138808' }}>O</span>
+            <span>M</span>
             <br />
-            <span style={{ color: '#138808' }}>T</span>
-            <br />
+            <span>E</span>
           </div>
         </div>
       </Wrapper>

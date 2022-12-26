@@ -6,7 +6,7 @@ import Iconify from '../components/Iconify';
 
 const Project = () => (
   <>
-    <Page title="Dashboard: Blog">
+    <Page title="Project">
       <Container>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>

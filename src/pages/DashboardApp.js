@@ -1,56 +1,48 @@
-import { Grid, Container, Typography, Box, Stack, Button, Card } from '@mui/material';
+import { Grid, Container, Typography, Box, Button, Card } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
-import Typical from 'react-typical';
 import AuthSocial from '../sections/auth/AuthSocial';
 import account from '../_mock/account';
 import Page from '../components/Page';
 import { AppWidgetSummary } from '../sections/@dashboard/app';
 import myphoto from '../image/website2.svg';
 import Resume from './resume.pdf';
+import ImageSlider from './ImageSlider';
+import Home from './Home';
 
 export default function DashboardApp() {
   return (
-    <Page title="Dashboard">
-      <Container maxWidth="xl">
-        <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
-          <Typography id="mynamestyle" variant="h4" sx={{ mb: 1 }}>
-            Hy! I Am Satyendra Singh<span className="wavehand">👋</span>
-          </Typography>
-          <Typography variant="body1" sx={{ mb: 2 }}>
-            Last updated on September 27, 2022
-          </Typography>
-        </Stack>
-
-        <Typography style={{ color: 'red' }} variant="h6" sx={{ mb: 2 }}>
+    <Page title="Home">
+      <Home />
+      <Container maxWidth="lg">
+        <Typography style={{ color: 'black' }} variant="h5" sx={{ mb: 2 }}>
           We The Web Developer
         </Typography>
         <box style={{ textAlign: 'justify' }}>
           <Typography variant="body2" sx={{ mb: 2 }}>
-            <span style={{ color: 'orange' }}>https://www.satyendrapoojarajpoot.in</span> website is all about
+            <span style={{ color: 'orangered' }}>https://www.satyendrapoojarajpoot.in</span> website is all about
             creativity and innovative work in the field of Technology. We provide web development courses videos, MCS
             important videos and technology videos and articles. You will get all of my youtube videos source code and
             you are free to use it and make changes. Please give us your valuable feedback and suggestions. We
-            appreciate your opinions and will use it to evaluate changes and make improvements on our blog
+            appreciate your opinions and will use it to evaluate changes and make improvements on our blog.
           </Typography>
         </box>
-
-        <Box sx={{ mb: 3 }}>
+        <Box sx={{ mb: 5 }}>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={6}>
               <box style={{ textAlign: 'justify' }}>
                 <Typography sx={{ mb: 3 }} variant="body2">
                   My name is Satyendra Singh. I'm 23years old. I born in Banda, Uttar Pradesh. Currently, I am living in
-                  Bengalore, India. In my family, I live with my papa, mummy and two cute sister,and one cute brother,
-                  he name is Puspendra Singh. I am thankful to God that he gives me such a wonderful family. I am
-                  working as a web developer and I am a Youtuber too. I want to share with you my experiences during
-                  Colleges, as Web developers and the problems I faced, the solutions I found and the places I went to.
-                  I hope my blog will guide you, and give you the knowledge that you are looking to.
+                  Bengalore, India. I live with my wife. And my family lives in Native only. I am thankful to God that
+                  he gives me such a wonderful family. I am working as a web developer \ And I am a Youtuber too. I want
+                  to share with you my experiences during Colleges, as Web developers and the problems I faced, the
+                  solutions I found and the places I went to. I hope my blog will guide you, and give you the knowledge
+                  that you are looking to.
                 </Typography>
               </box>
-              <Box>
+              <Box sx={{ mt: 5 }}>
                 <Grid container spacing={3}>
                   <Grid item xs={12} sm={6} md={6}>
                     <a style={{ textDecoration: 'none' }} href="https://github.com/PoojaSingh2422">
@@ -80,34 +72,16 @@ export default function DashboardApp() {
               <Box className="blur" style={{ display: 'flex', justifyContent: 'center', padding: '10px' }}>
                 <img id="mypro" src={myphoto} alt="myimg" />
               </Box>
-              <Box style={{ display: 'flex', justifyContent: 'center' }}>
-                <Typography variant="h6">
-                  <Typical
-                    steps={[
-                      'React developer',
-                      2000,
-                      'Full Stack Web development',
-                      2000,
-                      'Buliding Rest API',
-                      2000,
-                      'Mern stack developer',
-                      2000,
-                      'Managing database',
-                      2000,
-                    ]}
-                    loop={Infinity}
-                    wrapper="p"
-                  />
-                </Typography>
-              </Box>
             </Grid>
           </Grid>
         </Box>
+        <ImageSlider />
         <Box style={{ display: 'flex', justifyContent: 'center' }}>
           <Typography className="about" variant="h6" sx={{ mb: 5 }}>
             About Me
           </Typography>
         </Box>
+
         <Card>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6} md={6}>

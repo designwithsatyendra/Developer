@@ -12,7 +12,7 @@ const AccountStyle = styled('div')(({ theme }) => ({
 }));
 export default function EcommerceShop() {
   return (
-    <Page title="Dashboard: Products">
+    <Page title="Contact Us">
       <Container>
         <Typography variant="h5" sx={{ mb: 1 }}>
           Contact

@@ -29,15 +29,11 @@ const navConfig = [
     path: '/dashboard/project',
     icon: getIcon('file-icons:microsoft-project'),
   },
+
   {
-    title: 'Experience',
-    path: '/dashboard/experience',
-    icon: getIcon('file-icons:microsoft-project'),
-  },
-  {
-    title: 'Education',
-    path: '/dashboard/education',
-    icon: getIcon('medical-icon:i-health-education'),
+    title: 'Blog',
+    path: '/dashboard/blogpage',
+    icon: getIcon('mingcute:file-certificate-fill'),
   },
 ];
 

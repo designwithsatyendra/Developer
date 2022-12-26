@@ -8,12 +8,12 @@ import Iconify from '../../components/Iconify';
 export default function AuthSocial() {
   const navConfig = [
     {
-      path: '/dashboard/education',
+      path: 'https://github.com/designwithsatyendra',
       icon: 'fa:github-alt',
-      color: '#1C2CEA',
+      color: '#000000',
     },
     {
-      path: '/dashboard/education',
+      path: 'https://www.linkedin.com/in/satyendra-singh-48ba751b7',
       icon: 'entypo-social:linkedin-with-circle',
       color: '#1877F2',
     },
@@ -24,14 +24,9 @@ export default function AuthSocial() {
     },
 
     {
-      path: 'https://www.instagram.com/satyendrapoojarajpoot',
+      path: 'https://www.instagram.com/satyendra_pooja_rajpoot/',
       icon: 'fa6-brands:instagram-square',
-      color: '#1877F2',
-    },
-    {
-      path: '/dashboard/education',
-      icon: 'fa:github-alt',
-      color: '#1C2CEA',
+      color: '#bc2a8d',
     },
   ];
 
@@ -40,7 +35,7 @@ export default function AuthSocial() {
       <Stack direction="row" mb={2} spacing={2}>
         {navConfig.map((item, id) => (
           <>
-            <a href={item.path}>
+            <a href={item.path} target="_blank" rel="noopener noreferrer">
               <Button key={id} fullWidth size="large" color="inherit" variant="outlined">
                 <Iconify icon={item.icon} color={item.color} width={22} height={22} />
               </Button>

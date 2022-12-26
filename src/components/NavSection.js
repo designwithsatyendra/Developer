@@ -25,8 +25,6 @@ const ListItemIconStyle = styled(ListItemIcon)({
   justifyContent: 'center',
 });
 
-// ----------------------------------------------------------------------
-
 NavItem.propTypes = {
   item: PropTypes.object,
   active: PropTypes.func,
@@ -48,7 +46,7 @@ function NavItem({ item, active }) {
   const activeRootStyle = {
     color: 'text-secondary ',
     fontWeight: 'fontWeightMedium',
-    bgcolor: alpha(theme.palette.success.main, theme.palette.action.selectedOpacity),
+    bgcolor: alpha(theme.palette.success.dark, theme.palette.action.selectedOpacity),
   };
 
   const activeSubStyle = {

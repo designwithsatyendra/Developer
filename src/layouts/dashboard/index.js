@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import { Box } from '@mui/material';
+
 import { Outlet } from 'react-router-dom';
 // material
 import { styled } from '@mui/material/styles';
+import Footer from '../../pages/Footer';
 import DashboardNavbar from './DashboardNavbar';
 import DashboardSidebar from './DashboardSidebar';
 
@@ -10,22 +13,21 @@ import DashboardSidebar from './DashboardSidebar';
 const APP_BAR_MOBILE = 64;
 const APP_BAR_DESKTOP = 92;
 
-const RootStyle = styled('div')({
+const RootStyle = styled(Box)({
   display: 'flex',
-  minHeight: '100%',
   overflow: 'hidden',
 });
 
-const MainStyle = styled('div')(({ theme }) => ({
+const MainStyle = styled(Box)(({ theme }) => ({
   flexGrow: 1,
   overflow: 'auto',
-  minHeight: '100%',
+  width: '100vw',
   paddingTop: APP_BAR_MOBILE + 24,
   paddingBottom: theme.spacing(10),
   [theme.breakpoints.up('lg')]: {
     paddingTop: APP_BAR_DESKTOP + 24,
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2),
+    // paddingLeft: theme.spacing(2),
+    // paddingRight: theme.spacing(2),
   },
 }));
 
@@ -43,6 +45,7 @@ export default function DashboardLayout() {
           <Outlet />
         </MainStyle>
       </RootStyle>
+      <Footer />
     </>
   );
 }

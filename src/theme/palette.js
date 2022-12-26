@@ -135,10 +135,10 @@ const palette = {
   grey: GREY,
   gradients: GRADIENTS,
   divider: GREY[500_24],
-  text: { primary: GREY[200], secondary: GREY[200], disabled: GREY[200] },
-  background: { paper: GREY[600], default: GREY[700], neutral: GREY[200] },
+  text: { primary: GREY[900], secondary: GREY[900], disabled: GREY[700] },
+  background: { paper: GREY[200], default: GREY[200], neutral: GREY[200] },
   action: {
-    active: GREY[600],
+    active: GREY[100],
     hover: GREY[500_8],
     selected: GREY[500_16],
     disabled: GREY[500_80],
