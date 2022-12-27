@@ -27,7 +27,7 @@ const SourseCode = () => {
   return (
     <>
       <Page title="SourceCode">
-        <Container maxWidth="xl">
+        <Container>
           <Typography style={{ color: 'black' }} variant="h5" sx={{ mb: 2 }}>
             How To Get The Source Code
           </Typography>

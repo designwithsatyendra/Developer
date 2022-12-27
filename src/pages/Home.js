@@ -93,15 +93,13 @@ const Home = () => {
               <span>
                 <Typical
                   steps={[
-                    'React developer',
+                    'YOUTUBE SOURCECODE',
                     2000,
-                    'Full Stack Web development',
+                    'DESIGNWITHSATYA',
                     2000,
-                    'Buliding Rest API',
+                    'WEBDEVELOPER',
                     2000,
-                    'Mern stack developer',
-                    2000,
-                    'Managing database',
+                    'DESIGNWITHME',
                     2000,
                   ]}
                   loop={Infinity}

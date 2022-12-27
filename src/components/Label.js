@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types';
-// @mui
 import { alpha, styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
-
-// ----------------------------------------------------------------------
 
 const RootStyle = styled('span')(({ theme, ownerState }) => {
   const isLight = theme.palette.mode === 'light';

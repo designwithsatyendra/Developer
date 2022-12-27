@@ -50,7 +50,7 @@ export default function DashboardNavbar({ onOpenSidebar }) {
               </Typography>
               <Stack direction="row" alignItems="center" spacing={{ xs: 1.5, sm: 1.5 }}>
                 <NavLink
-                  to="/dashboard/soursecode"
+                  to="/dashboard/blogs/blog1"
                   style={{ textDecoration: 'none', color: '#ffbd2f', fontSize: '12px', fontWeight: 'bold' }}
                 >
                   SORSECODE

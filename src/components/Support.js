@@ -45,7 +45,7 @@ const Wrapper = styled.section`
 
 const Support = () => (
   <>
-    <NavLink to="/dashboard/soursecode">
+    <NavLink to="/dashboard/blogs/blog1">
       <Wrapper>
         <div className="top-btn">
           <div className="buttom-btn">

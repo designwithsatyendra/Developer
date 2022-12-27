@@ -14,9 +14,11 @@ export default function EcommerceShop() {
   return (
     <Page title="Contact Us">
       <Container>
-        <Typography variant="h5" sx={{ mb: 1 }}>
-          Contact
-        </Typography>
+        <Box style={{ display: 'flex', justifyContent: 'center' }}>
+          <Typography className="about" variant="h6" sx={{ mb: 5 }}>
+            Get in Touch
+          </Typography>
+        </Box>
         <Card>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={4}>
@@ -41,7 +43,7 @@ export default function EcommerceShop() {
                       Email
                     </Typography>
                     <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                      poojasingh@gmail.com.in
+                      designwithsatya@gmail.com
                     </Typography>
                   </Box>
                 </AccountStyle>
