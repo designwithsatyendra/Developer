@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 // @mui
 import { styled } from '@mui/material/styles';
 import { Link, Card, Grid, Typography, CardContent } from '@mui/material';
-// utils
-import { fDate } from '../../../utils/formatTime';
 
 // ----------------------------------------------------------------------
 
@@ -45,6 +43,7 @@ export default function BlogPostCard({ post, index }) {
       <Card sx={{ position: 'relative' }}>
         <StyledCardMedia>
           <StyledCover alt={title} src={cover} />
+          {/* <LazyLoadImage sx={{ StyledCover }} effect="blur" alt={title} src={cover} /> */}
         </StyledCardMedia>
         <CardContent
           sx={{
@@ -57,7 +56,7 @@ export default function BlogPostCard({ post, index }) {
           }}
         >
           <Typography gutterBottom variant="caption" sx={{ color: 'text.disabled', display: 'block' }}>
-            {fDate(createdAt)}
+            {createdAt}
           </Typography>
 
           <StyledTitle

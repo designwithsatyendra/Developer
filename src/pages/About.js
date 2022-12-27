@@ -1,15 +1,76 @@
 import React from 'react';
 import { Grid, Typography, Box, Button, Card, Container } from '@mui/material';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import DownloadIcon from '@mui/icons-material/Download';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
 import Page from '../components/Page';
 import account from '../_mock/account';
 import Resume from './resume.pdf';
+import myphoto from '../image/website2.svg';
 
 const About = () => (
   <>
     <Page title="About Me">
-      <Container>
+      <Container maxWidth="lg">
+        <Typography style={{ color: 'black' }} variant="h5" sx={{ mb: 2 }}>
+          We The Web Developer
+        </Typography>
+        <box style={{ textAlign: 'justify' }}>
+          <Typography variant="body2" sx={{ mb: 2 }}>
+            <span style={{ color: 'orangered' }}>https://www.satyendrapoojarajpoot.in</span> website is all about
+            creativity and innovative work in the field of Technology. We provide web development courses videos, MCS
+            important videos and technology videos and articles. You will get all of my youtube videos source code and
+            you are free to use it and make changes. Please give us your valuable feedback and suggestions. We
+            appreciate your opinions and will use it to evaluate changes and make improvements on our blog.
+          </Typography>
+        </box>
+        <Box sx={{ mb: 5 }}>
+          <Grid container spacing={3}>
+            <Grid item xs={12} sm={6} md={6}>
+              <box style={{ textAlign: 'justify' }}>
+                <Typography sx={{ mb: 3 }} variant="body2">
+                  My name is Satyendra Singh. I'm 23years old. I born in Banda, Uttar Pradesh. Currently, I am living in
+                  Bengalore, India. I live with my wife. And my family lives in Native only. I am thankful to God that
+                  he gives me such a wonderful family. I am working as a web developer \ And I am a Youtuber too. I want
+                  to share with you my experiences during Colleges, as Web developers and the problems I faced, the
+                  solutions I found and the places I went to. I hope my blog will guide you, and give you the knowledge
+                  that you are looking to.
+                </Typography>
+              </box>
+              <Box sx={{ mt: 5 }}>
+                <Grid container spacing={3}>
+                  <Grid item xs={12} sm={6} md={6}>
+                    <a style={{ textDecoration: 'none' }} href="https://github.com/PoojaSingh2422">
+                      <Button
+                        to="/"
+                        fullWidth
+                        size="large"
+                        type="submit"
+                        variant="contained"
+                        startIcon={<GitHubIcon />}
+                      >
+                        View On GitHub
+                      </Button>
+                    </a>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={6}>
+                    <a style={{ textDecoration: 'none' }} href={Resume} download>
+                      <Button startIcon={<DownloadIcon />} fullWidth size="large" type="submit" variant="contained">
+                        Download CV
+                      </Button>
+                    </a>
+                  </Grid>
+                </Grid>
+              </Box>
+            </Grid>
+            <Grid item xs={12} sm={6} md={6}>
+              <Box className="blur" style={{ display: 'flex', justifyContent: 'center', padding: '10px' }}>
+                <img id="mypro" src={myphoto} alt="myimg" />
+              </Box>
+            </Grid>
+          </Grid>
+        </Box>
         <Box style={{ display: 'flex', justifyContent: 'center' }}>
           <Typography className="about" variant="h6" sx={{ mb: 5 }}>
             About Me

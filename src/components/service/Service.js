@@ -9,10 +9,10 @@ const Service = () => (
       <Container>
         <Box style={{ display: 'flex', justifyContent: 'center' }}>
           <Typography className="about" variant="h6" sx={{ mb: 5 }}>
-            Technical Skill's
+            What Do We Offer
           </Typography>
         </Box>
-        <Grid container spacing={3}>
+        <Grid sx={{ mb: 5 }} container spacing={3}>
           <Grid item xs={12} sm={6} md={3}>
             <AppWidgetSummary title="Cloud Developer" icon={'vscode-icons:file-type-aws'} />
           </Grid>
