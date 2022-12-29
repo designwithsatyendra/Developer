@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 import Link from '@mui/material/Link';
 
 function Sidebar(props) {
-  const { archives, description, social, tutorials, title } = props;
+  const { archives, description, social, title, tutorials, latestnews } = props;
 
   return (
     <>
@@ -42,6 +42,7 @@ function Sidebar(props) {
           </Typography>
         </Paper>
         {tutorials.map((tutorial) => (
+          // eslint-disable-next-line react/jsx-key
           <Paper elevation={0} sx={{ p: 2, bgcolor: 'grey.300' }}>
             <NavLink
               to="/"
@@ -51,6 +52,27 @@ function Sidebar(props) {
               key={tutorial.title}
             >
               {tutorial.title}
+            </NavLink>
+          </Paper>
+        ))}
+      </Box>
+      <Box sx={{ mt: 5, mb: 5, bgcolor: 'grey.300' }}>
+        <Paper elevation={0} sx={{ p: 2, bgcolor: 'grey.300' }}>
+          <Typography variant="h5" gutterBottom sx={{ mt: 3, textAlign: 'center' }}>
+            Other Latest News
+          </Typography>
+        </Paper>
+
+        {latestnews.map((news) => (
+          <Paper key={news.key} elevation={0} sx={{ p: 2, bgcolor: 'grey.300' }}>
+            <NavLink
+              to="/"
+              style={{ color: '#0645ad', textDecoration: 'none' }}
+              display="block"
+              variant="body1"
+              key={news.title}
+            >
+              {news.title}
             </NavLink>
           </Paper>
         ))}

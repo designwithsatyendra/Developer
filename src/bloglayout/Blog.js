@@ -1,9 +1,16 @@
 import * as React from 'react';
-import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
-import MainFeaturedPost from './MainFeaturedPost';
-import FeaturedPost from './FeaturedPost';
+import MainFeaturedPost from './BlogBannerDown';
+import FeaturedPost from './BlogBanner';
+import Header from './Header';
 
+const sections = [
+  { title: 'HTML5', url: '#' },
+  { title: 'CSS3', url: '#' },
+  { title: 'JAVASCRIPT', url: '#' },
+  { title: 'REACT JS', url: '#' },
+  { title: 'NEXTJS', url: '#' },
+];
 const mainFeaturedPost = {
   title: 'SATYENDRA SINGH',
   description: 'STORE OF WEB DEVELOPER AND TECHNOLOGIES OR NEW THINGS',
@@ -32,7 +39,8 @@ const featuredPosts = [
 export default function Blog() {
   return (
     <>
-      <CssBaseline />
+      <Header title="Blog" sections={sections} />
+
       <main>
         <MainFeaturedPost post={mainFeaturedPost} />
         <Grid container spacing={4}>

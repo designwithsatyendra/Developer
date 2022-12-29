@@ -12,9 +12,11 @@ const sidebar = {
     'Satyendra Singh, I am working as a web developer And I am a Youtuber too. I want to share with you my experiences during Colleges,',
   archives: [
     { title: 'How To get source code', url: '/dashboard/blogs/sourcecode' },
-    { title: 'Complete JavaScript Course in 2021 By Design With Satya', url: '#' },
-    { title: 'Create Animated Website Using HTML5 & CSS3 in 2021', url: '#' },
-    { title: 'React JS 17.0.2 in one video By Design With Satya', url: '#' },
+    { title: 'Amazing Design Using HTML-CSS LoadingBar', url: '/dashboard/blogs/blog' },
+    { title: 'Create Animated Website Using HTML5 & CSS3 in 2021', url: '/dashboard/blogs/blog1' },
+    { title: 'React JS 17.0.2 in one video By Design With Satya', url: '/dashboard/blogs/blog2' },
+    { title: 'JavaScript in one video By Design With Satya', url: '/dashboard/blogs/blog3' },
+    { title: 'We Can Create Login Form using Html / Css', url: '/dashboard/blogs/blog4' },
   ],
   tutorials: [
     {
@@ -50,6 +52,21 @@ const sidebar = {
       url: '',
     },
   ],
+  latestnews: [
+    {
+      title:
+        'Sara Ali Khan drops holiday pictures with Ibrahim Ali Khan, fans say he looks more like Saif Ali Khan than Saif Ali Khan',
+      url: '',
+    },
+    {
+      title: 'Rs 500cr crypto scam: Many fall to promise of 200% returns',
+      url: '',
+    },
+    {
+      title: 'How Britain fell in love with chicken tikka masala',
+      url: '',
+    },
+  ],
   social: [
     { name: 'GitHub', url: 'https://github.com/designwithsatyendra', icon: GitHubIcon },
     { name: 'Instagram', url: 'https://www.instagram.com/satyendra_pooja_rajpoot/', icon: InstagramIcon },
@@ -59,18 +76,17 @@ const sidebar = {
 };
 console.log(sidebar.title);
 const theme = createTheme();
-const Mysidebar = () => {
-  return (
-    <ThemeProvider theme={theme}>
-      <Sidebar
-        title={sidebar.title}
-        description={sidebar.description}
-        archives={sidebar.archives}
-        tutorials={sidebar.tutorials}
-        social={sidebar.social}
-      />
-    </ThemeProvider>
-  );
-};
+const BlogSideData = () => (
+  <ThemeProvider theme={theme}>
+    <Sidebar
+      title={sidebar.title}
+      description={sidebar.description}
+      archives={sidebar.archives}
+      tutorials={sidebar.tutorials}
+      social={sidebar.social}
+      latestnews={sidebar.latestnews}
+    />
+  </ThemeProvider>
+);
 
-export default Mysidebar;
+export default BlogSideData;

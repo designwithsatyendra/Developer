@@ -8,23 +8,18 @@ import LogoOnlyLayout from './layouts/LogoOnlyLayout';
 import BlogsLayout from './bloglayout';
 import NotFound from './pages/Page404';
 import SourseCode from './components/soursecode/SourseCode';
-import BlogHome from './bloglayout/BlogHome';
-// import BlogsLayout from './bloglayout';
-// import Contact from './pages/Contact';
-// import DashboardApp from './pages/DashboardApp';
-// import Service from './components/service/Service';
-// import About from './pages/About';
-// import Project from './pages/Project';
-// import SourseCode from './components/soursecode/SourseCode';
-// import BlogPage from './components/blogs/BlogPage';
-
+import Blog from './bloglayout/BlogHome';
+import Blog1 from './bloglayout/popularpost/Blog1';
+import Blog2 from './bloglayout/popularpost/Blog2';
+import Blog3 from './bloglayout/popularpost/Blog3';
+import Blog4 from './bloglayout/popularpost/Blog4';
 // ----------------------------------------------------------------------
 const DashboardApp = React.lazy(() => import('./pages/DashboardApp'));
 const Contact = React.lazy(() => import('./pages/Contact'));
 const Service = React.lazy(() => import('./components/service/Service'));
 const About = React.lazy(() => import('./pages/About'));
 const Project = React.lazy(() => import('./pages/Project'));
-const BlogPage = React.lazy(() => import('./bloglayout/Blogs/BlogPage'));
+const BlogPage = React.lazy(() => import('./bloglayout/popularpost/BlogPage'));
 
 export default function Router() {
   return useRoutes([
@@ -46,8 +41,24 @@ export default function Router() {
           element: <BlogsLayout />,
           children: [
             {
+              path: 'blog',
+              element: <Blog />,
+            },
+            {
               path: 'blog1',
-              element: <BlogHome />,
+              element: <Blog1 />,
+            },
+            {
+              path: 'blog2',
+              element: <Blog2 />,
+            },
+            {
+              path: 'blog3',
+              element: <Blog3 />,
+            },
+            {
+              path: 'blog4',
+              element: <Blog4 />,
             },
             {
               path: 'sourcecode',

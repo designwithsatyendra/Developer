@@ -5,7 +5,8 @@ import { Outlet } from 'react-router-dom';
 import { Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Blog from './Blog';
-import Mysidebar from './Mysidebar';
+import BlogSideData from './BlogSideData';
+import Page from '../components/Page';
 
 const MainStyle = styled(Box)(() => ({
   width: '100%',
@@ -13,9 +14,9 @@ const MainStyle = styled(Box)(() => ({
   marginTop: '20px',
 }));
 
-const BlogsLayout = () => {
-  return (
-    <>
+const BlogsLayout = () => (
+  <>
+    <Page title="blogs">
       <Container>
         <Blog />
         <MainStyle>
@@ -24,13 +25,13 @@ const BlogsLayout = () => {
               <Outlet />
             </Grid>
             <Grid item xs={12} lg={4}>
-              <Mysidebar />
+              <BlogSideData />
             </Grid>
           </Grid>
         </MainStyle>
       </Container>
-    </>
-  );
-};
+    </Page>
+  </>
+);
 
 export default BlogsLayout;
