@@ -5,7 +5,7 @@
   "version": "1.5.0",
   "private": true,
   "allowedHosts": [
-    "4000"
+    "7000"
   ],
   "scripts": {
     "start": "react-scripts start",

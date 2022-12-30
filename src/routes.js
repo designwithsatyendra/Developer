@@ -3,6 +3,8 @@ import { Navigate, useRoutes } from 'react-router-dom';
 // layouts
 import DashboardLayout from './layouts/dashboard';
 import LogoOnlyLayout from './layouts/LogoOnlyLayout';
+import Login from './pages/LoginPage';
+import Register from './pages/Register';
 
 // blogs layouts
 import BlogsLayout from './bloglayout';
@@ -14,6 +16,8 @@ import Blog2 from './bloglayout/popularpost/Blog2';
 import Blog3 from './bloglayout/popularpost/Blog3';
 import Blog4 from './bloglayout/popularpost/Blog4';
 // ----------------------------------------------------------------------
+// dashboard layout
+
 const DashboardApp = React.lazy(() => import('./pages/DashboardApp'));
 const Contact = React.lazy(() => import('./pages/Contact'));
 const Service = React.lazy(() => import('./components/service/Service'));
@@ -68,17 +72,7 @@ export default function Router() {
         },
       ],
     },
-    // blogs layout
-    // {
-    //   path: '/blog',
-    //   element: <BlogsLayout />,
-    //   children: [
-    //     {
-    //       path: 'app',
-    //       element: <BlogPage />,
-    //     },
-    //   ],
-    // },
+
     {
       path: '/',
       element: <LogoOnlyLayout />,
@@ -86,6 +80,8 @@ export default function Router() {
         { path: '/', element: <Navigate to="/dashboard/app" /> },
         { path: '404', element: <NotFound /> },
         { path: '*', element: <Navigate to="/404" /> },
+        { path: 'login', element: <Login /> },
+        { path: 'register', element: <Register /> },
       ],
     },
 

@@ -1,5 +1,5 @@
+import React, { useState } from 'react';
 import { Container, Typography, Card, Grid, Box, Stack, Button, TextField, TextareaAutosize } from '@mui/material';
-
 import { styled } from '@mui/material/styles';
 import Page from '../components/Page';
 
@@ -11,6 +11,42 @@ const AccountStyle = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.grey[500_12],
 }));
 export default function EcommerceShop() {
+  const [userData, setUserData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  // we are storing data in states
+  const handleInputs = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setUserData({ ...userData, [name]: value });
+  };
+  const SendMessage = async (e) => {
+    e.preventDefault();
+    const { name, email, message } = userData;
+    const res = await fetch('/sentmessage', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        message,
+      }),
+    });
+
+    const data = await res.json();
+
+    if (!data) {
+      console.log('message not send ');
+    } else {
+      alert('Message Send');
+      setUserData({ ...userData, message: '' });
+    }
+  };
+
   return (
     <Page title="Contact Us">
       <Container>
@@ -77,6 +113,8 @@ export default function EcommerceShop() {
                         id="outlined-basic"
                         label="Frist Name"
                         variant="outlined"
+                        value={userData.name}
+                        onChange={handleInputs}
                       />
                       <TextField
                         name="email"
@@ -85,16 +123,22 @@ export default function EcommerceShop() {
                         id="outlined-basic"
                         label="Email"
                         variant="outlined"
+                        value={userData.email}
+                        onChange={handleInputs}
                       />
                     </Stack>
                     <TextareaAutosize
                       aria-label="minimum height"
                       minRows={8}
+                      name="message"
+                      type="text"
                       placeholder="type message here"
                       style={{ width: '100%' }}
+                      value={userData.message}
+                      onChange={handleInputs}
                     />
 
-                    <Button fullWidth size="large" type="submit" variant="contained">
+                    <Button onClick={SendMessage} fullWidth size="large" type="submit" variant="contained">
                       Send Message
                     </Button>
                   </Stack>

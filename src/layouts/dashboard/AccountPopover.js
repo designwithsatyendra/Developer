@@ -17,14 +17,14 @@ const MENU_OPTIONS = [
     linkTo: '/',
   },
   {
-    label: 'Profile',
+    label: 'Register',
     icon: 'eva:person-fill',
-    linkTo: '#',
+    linkTo: '/register',
   },
   {
-    label: 'Settings',
+    label: 'Login',
     icon: 'eva:settings-2-fill',
-    linkTo: '#',
+    linkTo: '/login',
   },
 ];
 
