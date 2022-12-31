@@ -59,18 +59,16 @@ const sidebar = {
 };
 console.log(sidebar.title);
 const theme = createTheme();
-const Mysidebar = () => {
-  return (
-    <ThemeProvider theme={theme}>
-      <Sidebar
-        title={sidebar.title}
-        description={sidebar.description}
-        archives={sidebar.archives}
-        tutorials={sidebar.tutorials}
-        social={sidebar.social}
-      />
-    </ThemeProvider>
-  );
-};
+const Mysidebar = () => (
+  <ThemeProvider theme={theme}>
+    <Sidebar
+      title={sidebar.title}
+      description={sidebar.description}
+      archives={sidebar.archives}
+      tutorials={sidebar.tutorials}
+      social={sidebar.social}
+    />
+  </ThemeProvider>
+);
 
 export default Mysidebar;

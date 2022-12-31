@@ -1,12 +1,8 @@
 {
   "name": "satyendrasingh",
   "author": "satyendra",
-  "licence": "MIT",
   "version": "1.5.0",
-  "private": true,
-  "allowedHosts": [
-    "4000"
-  ],
+  "private": false,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

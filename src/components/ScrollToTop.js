@@ -16,7 +16,7 @@ const Wrapper = styled.section`
     position: fixed;
     background: #00ff00;
     opacity: 0.9;
-    bottom: 1rem;
+    bottom: 0.3rem;
     right: 0.2rem;
     z-index: 999;
     display: flex;

@@ -2,8 +2,6 @@ import React from 'react';
 import { Grid, Typography, Box, Button, Card, Container } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import DownloadIcon from '@mui/icons-material/Download';
-import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
-import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
 import Page from '../components/Page';
 import account from '../_mock/account';
 import Resume from './resume.pdf';
@@ -108,23 +106,6 @@ const About = () => (
                     <li>Managing database</li>
                   </ul>
                 </div>
-                <a style={{ textDecoration: 'none' }} href="https://www.youtube.com/watch?v=OXWCzLpcGN4">
-                  <Button
-                    style={{ margin: '5px' }}
-                    to="/"
-                    size="large"
-                    color="warning"
-                    variant="contained"
-                    startIcon={<EmojiPeopleIcon />}
-                  >
-                    Hire Me
-                  </Button>
-                </a>
-                <a style={{ textDecoration: 'none' }} href={Resume} download>
-                  <Button size="large" color="warning" variant="contained" startIcon={<PictureAsPdfIcon />}>
-                    Get Resume
-                  </Button>
-                </a>
               </Box>
             </Grid>
           </Grid>

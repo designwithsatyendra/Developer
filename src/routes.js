@@ -1,22 +1,11 @@
 import React from 'react';
 import { Navigate, useRoutes } from 'react-router-dom';
-// layouts
-import DashboardLayout from './layouts/dashboard';
 import LogoOnlyLayout from './layouts/LogoOnlyLayout';
 
-// blogs layouts
-import BlogsLayout from './bloglayout';
 import NotFound from './pages/Page404';
-import SourseCode from './components/soursecode/SourseCode';
-import BlogHome from './bloglayout/BlogHome';
-// import BlogsLayout from './bloglayout';
-// import Contact from './pages/Contact';
-// import DashboardApp from './pages/DashboardApp';
-// import Service from './components/service/Service';
-// import About from './pages/About';
-// import Project from './pages/Project';
-// import SourseCode from './components/soursecode/SourseCode';
-// import BlogPage from './components/blogs/BlogPage';
+// dash and blog layouts
+const DashboardLayout = React.lazy(() => import('./layouts/dashboard'));
+const BlogsLayout = React.lazy(() => import('./bloglayout'));
 
 // ----------------------------------------------------------------------
 const DashboardApp = React.lazy(() => import('./pages/DashboardApp'));
@@ -25,6 +14,8 @@ const Service = React.lazy(() => import('./components/service/Service'));
 const About = React.lazy(() => import('./pages/About'));
 const Project = React.lazy(() => import('./pages/Project'));
 const BlogPage = React.lazy(() => import('./bloglayout/Blogs/BlogPage'));
+const SourseCode = React.lazy(() => import('./components/soursecode/SourseCode'));
+const BlogHome = React.lazy(() => import('./bloglayout/BlogHome'));
 
 export default function Router() {
   return useRoutes([
@@ -57,17 +48,7 @@ export default function Router() {
         },
       ],
     },
-    // blogs layout
-    // {
-    //   path: '/blog',
-    //   element: <BlogsLayout />,
-    //   children: [
-    //     {
-    //       path: 'app',
-    //       element: <BlogPage />,
-    //     },
-    //   ],
-    // },
+
     {
       path: '/',
       element: <LogoOnlyLayout />,

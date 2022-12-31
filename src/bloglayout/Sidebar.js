@@ -42,6 +42,7 @@ function Sidebar(props) {
           </Typography>
         </Paper>
         {tutorials.map((tutorial) => (
+          // eslint-disable-next-line react/jsx-key
           <Paper elevation={0} sx={{ p: 2, bgcolor: 'grey.300' }}>
             <NavLink
               to="/"
@@ -102,6 +103,12 @@ Sidebar.propTypes = {
     PropTypes.shape({
       icon: PropTypes.elementType.isRequired,
       name: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  tutorials: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.elementType.isRequired,
+      url: PropTypes.string.isRequired,
     })
   ).isRequired,
   title: PropTypes.string.isRequired,

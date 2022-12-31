@@ -13,24 +13,22 @@ const MainStyle = styled(Box)(() => ({
   marginTop: '20px',
 }));
 
-const BlogsLayout = () => {
-  return (
-    <>
-      <Container>
-        <Blog />
-        <MainStyle>
-          <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-            <Grid item xs={12} lg={8}>
-              <Outlet />
-            </Grid>
-            <Grid item xs={12} lg={4}>
-              <Mysidebar />
-            </Grid>
+const BlogsLayout = () => (
+  <>
+    <Container>
+      <Blog />
+      <MainStyle>
+        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+          <Grid item xs={12} lg={8}>
+            <Outlet />
           </Grid>
-        </MainStyle>
-      </Container>
-    </>
-  );
-};
+          <Grid item xs={12} lg={4}>
+            <Mysidebar />
+          </Grid>
+        </Grid>
+      </MainStyle>
+    </Container>
+  </>
+);
 
 export default BlogsLayout;

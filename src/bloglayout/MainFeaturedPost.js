@@ -16,10 +16,12 @@ function MainFeaturedPost(props) {
         backgroundColor: 'grey.800',
         color: '#fff',
         mb: 4,
+        mt: 2,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         backgroundImage: `url(${post.image})`,
+        height: '50vh',
       }}
     >
       {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
@@ -42,13 +44,13 @@ function MainFeaturedPost(props) {
               pr: { md: 0 },
             }}
           >
-            <Typography component="h1" variant="h3" color="inherit" gutterBottom>
+            <Typography component="h1" variant="h4" color="inherit" gutterBottom>
               {post.title}
             </Typography>
-            <Typography variant="h5" color="inherit" paragraph>
+            <Typography variant="subtitle2" color="inherit" paragraph>
               {post.description}
             </Typography>
-            <Link variant="subtitle1" href="#">
+            <Link variant="subtitle1" href="#" sx={{ textDecoration: 'none', color: 'inherit' }}>
               {post.linkText}
             </Link>
           </Box>
