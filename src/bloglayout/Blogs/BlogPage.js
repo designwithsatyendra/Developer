@@ -1,9 +1,21 @@
-import { Grid, Container, Box, Typography } from '@mui/material';
+import React, { useState } from 'react';
+import { Grid, Container, Box, Typography, Button } from '@mui/material';
 import Page from '../../components/Page';
 import { BlogPostCard } from '../../sections/@dashboard/blog';
 import POSTS from '../../_mock/blog';
 
 export default function BlogPage() {
+  const [isCompleted, setIsCompleted] = useState(false);
+  const [numberofelement, setnumberofelement] = useState(8);
+  const slicedata = POSTS.slice(0, numberofelement);
+  const LoadData = () => {
+    setnumberofelement(numberofelement + numberofelement);
+    if (numberofelement >= slicedata.length) {
+      setIsCompleted(true);
+    } else {
+      setIsCompleted(false);
+    }
+  };
   return (
     <>
       <Page title="Blogs">
@@ -19,10 +31,17 @@ export default function BlogPage() {
           </Typography>
 
           <Grid container sx={{ mb: 5 }} spacing={3}>
-            {POSTS.map((post, index) => (
+            {slicedata.map((post, index) => (
               <BlogPostCard key={post.id} post={post} index={index} />
             ))}
           </Grid>
+          {isCompleted ? (
+            ''
+          ) : (
+            <Button onClick={() => LoadData()} sx={{ mb: 5 }} size="small" type="submit" variant="contained">
+              View More
+            </Button>
+          )}
         </Container>
       </Page>
     </>
