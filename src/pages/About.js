@@ -4,7 +4,6 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import DownloadIcon from '@mui/icons-material/Download';
 import Page from '../components/Page';
 import account from '../_mock/account';
-import Resume from './resume.pdf';
 import myphoto from '../image/website2.svg';
 
 const About = () => (
@@ -53,7 +52,7 @@ const About = () => (
                     </a>
                   </Grid>
                   <Grid item xs={12} sm={6} md={6}>
-                    <a style={{ textDecoration: 'none' }} href={Resume} download>
+                    <a style={{ textDecoration: 'none' }} href="/" download>
                       <Button startIcon={<DownloadIcon />} fullWidth size="large" type="submit" variant="contained">
                         Download CV
                       </Button>

@@ -1,11 +1,13 @@
 import React from 'react';
 import Typical from 'react-typical';
+// eslint-disable-next-line import/no-duplicates
 import { Box, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import AuthSocial from '../sections/auth/AuthSocial';
 
 const RootStyle = styled(Box)(({ theme }) => ({
-  background: `url('https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80')`,
+  // background: `url('https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80')`,
+  background: `url('https://images.pexels.com/photos/6963945/pexels-photo-6963945.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')`,
   height: '100vh',
   width: '100%',
   backgroundRepeat: 'no-repeat',
@@ -58,7 +60,9 @@ const Home = () => (
   <>
     <RootStyle>
       <UnderRootStyle>
-        <MyTypoGraphy>WELCOME TO SATYENDRA</MyTypoGraphy>
+        <MyTypoGraphy>
+          WELCOME TO SATYENDRA <span className="wavehand">👋</span>
+        </MyTypoGraphy>
         <Typography variant="h6" sx={{ mb: 2 }}>
           ABOUT ME
         </Typography>

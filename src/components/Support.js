@@ -10,7 +10,7 @@ const Wrapper = styled.section`
 
   .top-btn {
     font-size: 0.9rem;
-    background: #00ff00;
+    background: rgb(87, 255, 87);
     border-radius: 3px;
     padding: 5px;
     height: 12rem;
@@ -45,7 +45,7 @@ const Wrapper = styled.section`
 
 const Support = () => (
   <>
-    <NavLink to="/dashboard/blogs/blog1">
+    <NavLink to="/dashboard/blogs/sourcecode">
       <Wrapper>
         <div className="top-btn">
           <div className="buttom-btn">
