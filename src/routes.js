@@ -16,6 +16,7 @@ const Project = React.lazy(() => import('./pages/Project'));
 const BlogPage = React.lazy(() => import('./bloglayout/Blogs/BlogPage'));
 const SourseCode = React.lazy(() => import('./components/soursecode/SourseCode'));
 const BlogHome = React.lazy(() => import('./bloglayout/BlogHome'));
+const Blog2 = React.lazy(() => import('./bloglayout/Blogs/Blog2'));
 
 export default function Router() {
   return useRoutes([
@@ -39,6 +40,10 @@ export default function Router() {
             {
               path: 'blog1',
               element: <BlogHome />,
+            },
+            {
+              path: 'blog2',
+              element: <Blog2 />,
             },
             {
               path: 'sourcecode',

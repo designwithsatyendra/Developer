@@ -1,39 +1,40 @@
 // component
-import Iconify from '../../components/Iconify';
+// import Iconify from '../../components/Iconify';
+import SvgColor from '../../components/svg-color';
 
-const getIcon = (name) => <Iconify icon={name} width={22} height={22} />;
+const getIcon = (name) => <SvgColor src={`/assets/icons/navbar/${name}.svg`} sx={{ width: 1, height: 1 }} />;
 
 const navConfig = [
   {
     title: 'Home',
     path: '/dashboard/app',
-    icon: getIcon('eva:pie-chart-2-fill'),
+    icon: getIcon('ic_analytics'),
   },
   {
     title: 'Contact',
     path: '/dashboard/contact',
-    icon: getIcon('fluent:contact-card-ribbon-20-filled'),
+    icon: getIcon('ic_user'),
   },
   {
     title: 'About',
     path: '/dashboard/about',
-    icon: getIcon('cil:contact'),
+    icon: getIcon('ic_about'),
   },
   {
     title: 'Services',
     path: '/dashboard/service',
-    icon: getIcon('cil:contact'),
+    icon: getIcon('ic_cart'),
   },
   {
     title: 'Our project',
     path: '/dashboard/project',
-    icon: getIcon('file-icons:microsoft-project'),
+    icon: getIcon('ic_project'),
   },
 
   {
-    title: 'Blog',
+    title: 'Blogs',
     path: '/dashboard/blogpage',
-    icon: getIcon('mingcute:file-certificate-fill'),
+    icon: getIcon('ic_blog'),
   },
 ];
 

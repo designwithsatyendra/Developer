@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 
 const StyledCardMedia = styled('div')({
   position: 'relative',
-  paddingTop: 'calc(100% * 3 / 4)',
+  paddingTop: 'calc(100% * 3 / 5)',
 });
 
 const StyledTitle = styled('div')({
@@ -38,7 +38,7 @@ export default function BlogPostCard({ post }) {
   const { cover, title, createdAt, url } = post;
 
   return (
-    <Grid item xs={12} sm={12} md={3}>
+    <Grid item xs={12} sm={6} md={3}>
       <Card sx={{ position: 'relative' }}>
         <StyledCardMedia>
           <StyledCover alt={title} src={cover} />

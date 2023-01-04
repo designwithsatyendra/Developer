@@ -10,10 +10,10 @@ const Wrapper = styled.section`
 
   .top-btn {
     font-size: 0.9rem;
-    background: #85e45d;
+    background: #673de6;
     border-radius: 3px;
     padding: 5px;
-    height: 12rem;
+    height: 14rem;
     position: fixed;
     bottom: 12rem;
     right: 0.2rem;
@@ -24,9 +24,7 @@ const Wrapper = styled.section`
     align-items: center;
     cursor: pointer;
     transition: all 0.5s ease 0s;
-    color: white;
-    opacity: 0.9;
-    color: black;
+    color: #fff;
 
     & {
       animation: gototop 1.2s linear infinite alternate-reverse;
@@ -49,13 +47,19 @@ const Support = () => (
       <Wrapper>
         <div className="top-btn">
           <div className="buttom-btn">
-            <span>H</span>
+            <span>S</span>
             <br />
-            <span>E</span>
-            <br />
-            <span>L</span>
+            <span>U</span>
             <br />
             <span>P</span>
+            <br />
+            <span>P</span>
+            <br />
+            <span>O</span>
+            <br />
+            <span>R</span>
+            <br />
+            <span>T</span>
             <br />
             <br />
             <span>M</span>

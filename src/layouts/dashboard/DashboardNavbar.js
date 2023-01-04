@@ -34,6 +34,7 @@ DashboardNavbar.propTypes = {
 };
 
 export default function DashboardNavbar({ onOpenSidebar }) {
+  console.log(onOpenSidebar.value);
   return (
     <>
       <RootStyle>
@@ -43,9 +44,14 @@ export default function DashboardNavbar({ onOpenSidebar }) {
               <IconButton onClick={onOpenSidebar} sx={{ color: 'black', mr: 1 }}>
                 <Iconify icon="eva:menu-2-fill" />
               </IconButton>
-              <Typography id="mynamestyle1" variant="h5" sx={{ flexGrow: 1 }}>
+
+              {/* <IconButton onClick={onOpenSidebar} sx={{ color: 'black', mr: 1 }}>
+                <Iconify icon="line-md:menu-to-close-transition" />
+              </IconButton> */}
+
+              <Typography variant="body2" sx={{ flexGrow: 1 }}>
                 <NavLink id="mynamestyle1" to="/" style={{ textDecoration: 'none' }}>
-                  DESIGNWITHSATYENDRA
+                  DESIGNWITHSATYA
                 </NavLink>
               </Typography>
               <Stack direction="row" alignItems="center" spacing={{ xs: 1.5, sm: 1.5 }}>
@@ -53,16 +59,15 @@ export default function DashboardNavbar({ onOpenSidebar }) {
                   to="/dashboard/blogs/blog1"
                   style={{
                     textDecoration: 'none',
-                    color: 'black',
-                    background: '#85e45d',
+                    color: '#fff',
+                    background: '#673de6',
                     fontSize: '12px',
                     fontWeight: 'bold',
-                    padding: '5px',
+                    padding: '7px',
                     borderRadius: '3px',
-                    opacity: '0.7',
                   }}
                 >
-                  SORSECODE
+                  SOURCECODE
                 </NavLink>
                 <AccountPopover />
               </Stack>

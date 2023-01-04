@@ -131,16 +131,14 @@ color: black;
     color: #0de22a;
     font-family: 'Love Light', cursive;
     font-size: 30px;
-     text-align: center;
+    text-align: center;
 
 }
 #mynamestyle1{
-    color: rgba(0, 0, 0, 0.6);
+    color: black;
     font-family:Arial, Helvetica, sans-serif;
-    font-size: 12px;
     font-weight: 700;
-   
-
+    letter-spacing: 1px;
 }
 .css-14ckj51{
     text-align: center;

@@ -1,7 +1,13 @@
+import React, { useEffect, useState } from 'react';
+// import { toast } from 'react-toastify';
 import { Container, Typography, Card, Grid, Box, Stack, Button, TextField, TextareaAutosize } from '@mui/material';
-
 import { styled } from '@mui/material/styles';
 import Page from '../components/Page';
+
+import { SendEmail } from '../API';
+import InlineError from '../components/component/InlineError';
+import { validateEmail } from '../components/component/Validation';
+// import Toast from '../components/component/Toast';
 
 const AccountStyle = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -10,7 +16,35 @@ const AccountStyle = styled('div')(({ theme }) => ({
   borderRadius: Number(theme.shape.borderRadius) * 1.5,
   backgroundColor: theme.palette.grey[500_12],
 }));
+
 export default function EcommerceShop() {
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [emailError, setEmailError] = useState();
+  const [send, setSend] = useState();
+
+  useEffect(() => {
+    validateEmail({ email, setEmailError });
+
+    if (send) {
+      setFullName('');
+      setEmail('');
+      setMessage('');
+    }
+  }, [fullName, email, message, send]);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    if (!emailError) {
+      SendEmail({ fullName, email, message, setSend }).then(() => {
+        setFullName('');
+        setEmail('');
+        setMessage('');
+      });
+    }
+  };
+
   return (
     <Page title="Contact Us">
       <Container>
@@ -67,20 +101,26 @@ export default function EcommerceShop() {
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={6}>
               <Box sx={{ mb: 5, mx: 2.5 }}>
-                <form method="POST">
+                <form onSubmit={submitHandler}>
+                  <Typography variant="body2"> {emailError && <InlineError error={emailError} />}</Typography>
                   <Stack spacing={3}>
                     <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
                       <TextField
-                        name="name"
                         type="text"
+                        value={fullName}
+                        onChange={(e) => setFullName(e.target.value)}
+                        required
                         fullWidth
                         id="outlined-basic"
                         label="Frist Name"
                         variant="outlined"
                       />
+
                       <TextField
-                        name="email"
                         type="email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         fullWidth
                         id="outlined-basic"
                         label="Email"
@@ -89,13 +129,16 @@ export default function EcommerceShop() {
                     </Stack>
                     <TextareaAutosize
                       aria-label="minimum height"
-                      minRows={8}
-                      placeholder="type message here"
+                      minRows={6}
+                      required
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      placeholder="How can help you"
                       style={{ width: '100%' }}
                     />
 
-                    <Button fullWidth size="large" type="submit" variant="contained">
-                      Send Message
+                    <Button type="submit" fullWidth size="large" variant="contained">
+                      Submit
                     </Button>
                   </Stack>
                 </form>

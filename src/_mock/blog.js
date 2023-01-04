@@ -8,10 +8,10 @@ const posts = [
   },
   {
     id: 2,
-    cover: `/assets/images/covers/cover_2.jpg`,
-    title: 'Responsive Mobile design',
+    cover: `/assets/images/covers/website.png`,
+    title: 'How to create own portfolio using with React js or Material UI',
     createdAt: 'DesignWithSatya',
-    url: '/',
+    url: '/dashboard/blogs/blog2',
   },
   {
     id: 3,
