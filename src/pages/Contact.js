@@ -7,7 +7,6 @@ import Page from '../components/Page';
 import { SendEmail } from '../API';
 import InlineError from '../components/component/InlineError';
 import { validateEmail } from '../components/component/Validation';
-// import Toast from '../components/component/Toast';
 
 const AccountStyle = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -23,6 +22,7 @@ export default function EcommerceShop() {
   const [message, setMessage] = useState('');
   const [emailError, setEmailError] = useState();
   const [send, setSend] = useState();
+  const [buttonLoading, setButtonLoading] = useState(false);
 
   useEffect(() => {
     validateEmail({ email, setEmailError });
@@ -36,11 +36,13 @@ export default function EcommerceShop() {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    setButtonLoading(true);
     if (!emailError) {
       SendEmail({ fullName, email, message, setSend }).then(() => {
         setFullName('');
         setEmail('');
         setMessage('');
+        setButtonLoading(false);
       });
     }
   };
@@ -137,8 +139,8 @@ export default function EcommerceShop() {
                       style={{ width: '100%' }}
                     />
 
-                    <Button type="submit" fullWidth size="large" variant="contained">
-                      Submit
+                    <Button disabled={buttonLoading && true} type="submit" fullWidth size="large" variant="contained">
+                      {buttonLoading ? 'Loading..' : 'SUBMIT'}
                     </Button>
                   </Stack>
                 </form>
