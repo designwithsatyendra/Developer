@@ -20,7 +20,7 @@ export default function BlogPage() {
     <>
       <Page title="Blogs">
         <Container>
-          <Box sx={{ mt: 5 }} style={{ display: 'flex', justifyContent: 'center' }}>
+          <Box sx={{ mt: 2 }} style={{ display: 'flex', justifyContent: 'center' }}>
             <Typography className="about" variant="h6">
               MyWork And SourceCode.
             </Typography>
