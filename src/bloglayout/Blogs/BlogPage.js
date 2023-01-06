@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
-import { Grid, Container, Box, Typography, Button } from '@mui/material';
+import { Grid, Container, Box, Typography, Button, Stack } from '@mui/material';
 import Page from '../../components/Page';
-import { BlogPostCard } from '../../sections/@dashboard/blog';
+import { BlogPostCard, BlogPostsSort } from '../../sections/@dashboard/blog';
 import POSTS from '../../_mock/blog';
+
+const SORT_OPTIONS = [
+  { value: 'latest', label: 'Latest' },
+  { value: 'popular', label: 'Popular' },
+  { value: 'oldest', label: 'Oldest' },
+];
 
 export default function BlogPage() {
   const [isCompleted, setIsCompleted] = useState(false);
@@ -20,7 +26,7 @@ export default function BlogPage() {
     <>
       <Page title="Blogs">
         <Container>
-          <Box sx={{ mt: 2 }} style={{ display: 'flex', justifyContent: 'center' }}>
+          <Box sx={{ mt: 5 }} style={{ display: 'flex', justifyContent: 'center' }}>
             <Typography className="about" variant="h6">
               MyWork And SourceCode.
             </Typography>
@@ -29,6 +35,12 @@ export default function BlogPage() {
             DesignWithSatya works and Youtube videos source code. Just click on any video and get the source code and we
             have technical article also. Have a great day.
           </Typography>
+          <Stack mb={5} direction="row" alignItems="center" justifyContent="space-between">
+            <Typography variant="h5" gutterBottom>
+              Blogs
+            </Typography>
+            <BlogPostsSort options={SORT_OPTIONS} />
+          </Stack>
 
           <Grid container sx={{ mb: 5 }} spacing={3}>
             {slicedata.map((post, index) => (

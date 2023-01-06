@@ -172,4 +172,9 @@ color: black;
 .carousel-caption p {
    font-weight: 400px;
 }
+/* latest post */
+.css-1wxntxh-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.MuiSelect-select {
+    border: 2px solid #673de6;
+    
+}
 
