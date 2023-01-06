@@ -1,6 +1,16 @@
 import React, { useEffect, useState } from 'react';
-// import { toast } from 'react-toastify';
-import { Container, Typography, Card, Grid, Box, Stack, Button, TextField, TextareaAutosize } from '@mui/material';
+import {
+  Container,
+  Typography,
+  Card,
+  Grid,
+  Box,
+  Stack,
+  Button,
+  TextField,
+  TextareaAutosize,
+  Avatar,
+} from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Page from '../components/Page';
 
@@ -55,16 +65,20 @@ export default function EcommerceShop() {
             Get in Touch
           </Typography>
         </Box>
+        <Box style={{ marginTop: '15px' }} sx={{ mb: 5, mx: 2.5 }}>
+          <Typography variant="subtitle1" sx={{ mt: 5, textAlign: 'justify' }}>
+            Hello Everyone! Have a great day :) I am here to help you. If you want to know something or you have any
+            suggestion then please mail me. Thank You.
+          </Typography>
+        </Box>
         <Card>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={4}>
               <Box style={{ marginTop: '15px' }} sx={{ mb: 1, mx: 2.5 }}>
                 <AccountStyle>
+                  <Avatar src="/assets/icons/phone.png" alt="photoURL" />
                   <Box sx={{ ml: 2 }}>
                     <Typography variant="body1" sx={{ color: 'text.primary' }}>
-                      Phone
-                    </Typography>
-                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                       7869351845
                     </Typography>
                   </Box>
@@ -74,11 +88,9 @@ export default function EcommerceShop() {
             <Grid item xs={12} sm={6} md={4}>
               <Box style={{ marginTop: '15px' }} sx={{ mb: 1, mx: 2.5 }}>
                 <AccountStyle>
+                  <Avatar src="/assets/icons/email.png" alt="photoURL" />
                   <Box sx={{ ml: 2 }}>
                     <Typography variant="body1" sx={{ color: 'text.primary' }}>
-                      Email
-                    </Typography>
-                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                       designwithsatya@gmail.com
                     </Typography>
                   </Box>
@@ -88,11 +100,9 @@ export default function EcommerceShop() {
             <Grid item xs={12} sm={6} md={4}>
               <Box style={{ marginTop: '15px' }} sx={{ mb: 5, mx: 2.5 }}>
                 <AccountStyle>
+                  <Avatar src="/assets/icons/gps.png" alt="photoURL" />
                   <Box sx={{ ml: 2 }}>
                     <Typography variant="body1" sx={{ color: 'text.primary' }}>
-                      Address
-                    </Typography>
-                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                       Banda Uttar pradesh 210001
                     </Typography>
                   </Box>
@@ -139,7 +149,13 @@ export default function EcommerceShop() {
                       style={{ width: '100%' }}
                     />
 
-                    <Button disabled={buttonLoading && true} type="submit" fullWidth size="large" variant="contained">
+                    <Button
+                      disabled={buttonLoading && true}
+                      type="submit"
+                      fullWidth
+                      size="large"
+                      variant="containedInherit"
+                    >
                       {buttonLoading ? 'Loading..' : 'SUBMIT'}
                     </Button>
                   </Stack>

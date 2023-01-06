@@ -24,7 +24,7 @@ const Wrapper = styled.section`
     cursor: pointer;
     color: white;
     &--icon {
-      font-size: 25px;
+      font-size: 20px;
       animation: gototop 1.2s linear infinite alternate-reverse;
     }
     @keyframes gototop {

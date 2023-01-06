@@ -45,10 +45,6 @@ export default function DashboardNavbar({ onOpenSidebar }) {
                 <Iconify icon="eva:menu-2-fill" />
               </IconButton>
 
-              {/* <IconButton onClick={onOpenSidebar} sx={{ color: 'black', mr: 1 }}>
-                <Iconify icon="line-md:menu-to-close-transition" />
-              </IconButton> */}
-
               <Typography variant="body2" sx={{ flexGrow: 1 }}>
                 <NavLink id="mynamestyle1" to="/" style={{ textDecoration: 'none' }}>
                   DESIGNWITHSATYA

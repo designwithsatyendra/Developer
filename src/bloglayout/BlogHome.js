@@ -28,7 +28,7 @@ const BlogHome = () => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button size="large" type="submit" variant="contained">
+          <Button size="large" type="submit" variant="containedInherit">
             Get Source Code
           </Button>
         </Link>

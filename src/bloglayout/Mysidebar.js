@@ -1,8 +1,4 @@
 import React from 'react';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Sidebar from './Sidebar';
 
@@ -50,14 +46,7 @@ const sidebar = {
       url: '',
     },
   ],
-  social: [
-    { name: 'GitHub', url: 'https://github.com/designwithsatyendra', icon: GitHubIcon },
-    { name: 'Instagram', url: 'https://www.instagram.com/satyendra_pooja_rajpoot/', icon: InstagramIcon },
-    { name: 'Youtube', url: 'https://www.youtube.com/watch?v=OXWCzLpcGN4', icon: YouTubeIcon },
-    { name: 'Linkedin', url: 'https://www.linkedin.com/in/satyendra-singh-48ba751b7/', icon: LinkedInIcon },
-  ],
 };
-console.log(sidebar.title);
 const theme = createTheme();
 const Mysidebar = () => (
   <ThemeProvider theme={theme}>
@@ -66,7 +55,6 @@ const Mysidebar = () => (
       description={sidebar.description}
       archives={sidebar.archives}
       tutorials={sidebar.tutorials}
-      social={sidebar.social}
     />
   </ThemeProvider>
 );

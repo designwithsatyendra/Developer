@@ -1,4 +1,4 @@
-import { Container } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import React from 'react';
 
 const Slider = () => (
@@ -25,11 +25,11 @@ const Slider = () => (
               alt="..."
             />
             <div className="carousel-caption d-none d-md-block">
-              <h5>Satyendra Singh, Designwithsatya</h5>
-              <p>
+              <Typography variant="h5">Satyendra Singh, Designwithsatya</Typography>
+              <Typography variant="subtitle1">
                 "Satyendra Singh Rajpoot ka DesignWithSatya is a web developer and Youtuber.DesignWithSatya want to help
                 others by providing free videos on Web Development and Schools/University important topics."
-              </p>
+              </Typography>
             </div>
           </div>
           <div className="carousel-item active">
@@ -39,11 +39,11 @@ const Slider = () => (
               alt="..."
             />
             <div className="carousel-caption d-none d-md-block">
-              <h5>Satyendra Singh, Youtuber</h5>
-              <p>
+              <Typography variant="h5">Satyendra Singh, Youtuber</Typography>
+              <Typography variant="subtitle1">
                 "Satyendra Singh Rajpoot ka DesignWithSatya is a web developer and Youtuber.DesignWithSatya want to help
                 others by providing free videos on Web Development and Schools/University important topics."
-              </p>
+              </Typography>
             </div>
           </div>
           <div className="carousel-item">
@@ -53,11 +53,11 @@ const Slider = () => (
               alt="..."
             />
             <div className="carousel-caption d-none d-md-block">
-              <h5>Satyendra Singh, Web Developer</h5>
-              <p>
+              <Typography variant="h5">Satyendra Singh, Web Developer</Typography>
+              <Typography variant="subtitle1">
                 "Satyendra Singh Rajpoot ka DesignWithSatya is a web developer and Youtuber.DesignWithSatya want to help
                 others by providing free videos on Web Development and Schools/University important topics."
-              </p>
+              </Typography>
             </div>
           </div>
         </div>

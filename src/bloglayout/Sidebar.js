@@ -1,13 +1,11 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
 import { Typography, Box } from '@mui/material';
 import { NavLink } from 'react-router-dom';
-import Link from '@mui/material/Link';
 
 function Sidebar(props) {
-  const { archives, description, social, tutorials, title } = props;
+  const { archives, description, tutorials, title } = props;
 
   return (
     <>
@@ -66,27 +64,6 @@ function Sidebar(props) {
           Popular Technologies
         </Typography>
       </Paper>
-
-      <Typography variant="h5" gutterBottom sx={{ mt: 3 }}>
-        Social Media
-      </Typography>
-      {social.map((network) => (
-        <Link
-          display="block"
-          variant="body1"
-          href={network.url}
-          key={network.name}
-          style={{ color: '#0645ad' }}
-          sx={{ mb: 0.5 }}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Stack direction="row" spacing={1} alignItems="center">
-            <network.icon />
-            <span>{network.name}</span>
-          </Stack>
-        </Link>
-      ))}
     </>
   );
 }
@@ -99,12 +76,6 @@ Sidebar.propTypes = {
     })
   ).isRequired,
   description: PropTypes.string.isRequired,
-  social: PropTypes.arrayOf(
-    PropTypes.shape({
-      icon: PropTypes.elementType.isRequired,
-      name: PropTypes.string.isRequired,
-    })
-  ).isRequired,
   tutorials: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.elementType.isRequired,

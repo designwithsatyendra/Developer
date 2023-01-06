@@ -44,7 +44,7 @@ const Footer = () => (
         </Grid>
       </Grid>
       <Box style={{ marginTop: '5px' }}>
-        <Typography variant="body1">Copyright © 2022 by Satyendra Rajpoot. All Right Reserved.</Typography>
+        <Typography variant="subtitle1">Copyright © 2022 by Satyendra Rajpoot. All Right Reserved.</Typography>
       </Box>
     </MainBox>
   </>

@@ -31,7 +31,7 @@ export default function BlogPage() {
               MyWork And SourceCode.
             </Typography>
           </Box>
-          <Typography variant="body2" sx={{ mb: 5, textAlign: 'center' }}>
+          <Typography variant="subtitle1" sx={{ mb: 5, textAlign: 'justify' }}>
             DesignWithSatya works and Youtube videos source code. Just click on any video and get the source code and we
             have technical article also. Have a great day.
           </Typography>
@@ -50,7 +50,7 @@ export default function BlogPage() {
           {isCompleted ? (
             ''
           ) : (
-            <Button onClick={() => LoadData()} sx={{ mb: 5 }} size="small" type="submit" variant="contained">
+            <Button onClick={() => LoadData()} sx={{ mb: 5 }} size="small" type="submit" variant="containedInherit">
               View More
             </Button>
           )}

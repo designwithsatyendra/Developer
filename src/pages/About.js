@@ -1,10 +1,32 @@
 import React from 'react';
+import { styled } from '@mui/material/styles';
 import { Grid, Typography, Box, Button, Card, Container } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import DownloadIcon from '@mui/icons-material/Download';
 import Page from '../components/Page';
 import account from '../_mock/account';
 import myphoto from '../image/website2.svg';
+
+const Follow = styled(Box)(() => ({
+  position: 'absolute',
+  top: '-4px',
+  right: '15px',
+  width: '48px',
+  height: '55px',
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignItems: 'center',
+}));
+const Stripe = styled(Box)(() => ({
+  transform: 'skew(-29deg)',
+  backgroundColor: '#59d7a3',
+  height: '100%',
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+}));
 
 const About = () => (
   <>
@@ -38,25 +60,23 @@ const About = () => (
               <Box sx={{ mt: 5 }}>
                 <Grid container spacing={3}>
                   <Grid item xs={12} sm={6} md={6}>
-                    <a style={{ textDecoration: 'none' }} href="https://github.com/PoojaSingh2422">
-                      <Button
-                        to="/"
-                        fullWidth
-                        size="large"
-                        type="submit"
-                        variant="contained"
-                        startIcon={<GitHubIcon />}
-                      >
-                        View On GitHub
-                      </Button>
-                    </a>
+                    <Button fullWidth size="large" type="submit" variant="containedInherit" startIcon={<GitHubIcon />}>
+                      View On GitHub
+                    </Button>
                   </Grid>
                   <Grid item xs={12} sm={6} md={6}>
-                    <a style={{ textDecoration: 'none' }} href="/" download>
-                      <Button startIcon={<DownloadIcon />} fullWidth size="large" type="submit" variant="contained">
-                        Download CV
-                      </Button>
-                    </a>
+                    <Button
+                      fullWidth
+                      size="large"
+                      type="submit"
+                      variant="containedInherit"
+                      startIcon={<DownloadIcon />}
+                    >
+                      View On GitHub
+                      <Follow>
+                        <Stripe />
+                      </Follow>
+                    </Button>
                   </Grid>
                 </Grid>
               </Box>

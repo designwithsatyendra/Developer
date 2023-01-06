@@ -5,6 +5,12 @@ function createGradient(color1, color2) {
 }
 
 // SETUP COLORS
+const BLUEGRAY = {
+  100: '#673de6',
+  200: '#2756c1',
+  300: '#8563EB',
+  400: '#7650E8',
+};
 const GREY = {
   0: '#FFFFFF',
   100: '#F9FAFB',
@@ -121,6 +127,7 @@ const GRADIENTS = {
 };
 
 const palette = {
+  blugray: { ...BLUEGRAY },
   common: { black: '#000', white: '#fff' },
   primary: { ...PRIMARY },
   secondary: { ...SECONDARY },
