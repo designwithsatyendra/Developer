@@ -6,12 +6,12 @@ import FeaturedPost from './FeaturedPost';
 import BlogHeader from './BlogHeader';
 
 const sections = [
-  { title: 'Technology', url: '#' },
-  { title: 'Design', url: '#' },
-  { title: 'Responsive', url: '#' },
-  { title: 'Next JS', url: '#' },
-  { title: 'UI Technologies', url: '#' },
-  { title: 'Web Developer', url: '#' },
+  { title: 'HTML5', url: '#' },
+  { title: 'CSS3', url: '#' },
+  { title: 'JAVASCRIPT', url: '#' },
+  { title: 'REACT JS', url: '#' },
+  { title: 'MATERIAL UI', url: '#' },
+  { title: 'NEXT JS', url: '#' },
 ];
 const mainFeaturedPost = {
   title: 'SATYENDRA SINGH',

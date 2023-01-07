@@ -14,7 +14,7 @@ const Wrapper = styled.section`
     height: 3rem;
     border-radius: 2px;
     position: fixed;
-    background: #673de6;
+    background: #6747c7;
     bottom: 0.3rem;
     right: 0.2rem;
     z-index: 999;

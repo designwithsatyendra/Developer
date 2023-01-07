@@ -56,7 +56,7 @@ export default function DashboardNavbar({ onOpenSidebar }) {
                   style={{
                     textDecoration: 'none',
                     color: '#fff',
-                    background: '#673de6',
+                    background: '#6747c7',
                     fontSize: '12px',
                     fontWeight: 'bold',
                     padding: '7px',

@@ -10,7 +10,7 @@ const Wrapper = styled.section`
 
   .top-btn {
     font-size: 0.9rem;
-    background: #673de6;
+    background: #6747c7;
     border-radius: 3px;
     padding: 5px;
     height: 14rem;
