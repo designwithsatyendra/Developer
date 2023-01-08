@@ -3,10 +3,8 @@ import Message from './components/message/Message';
 
 const MessageScroll = () => {
   const [message, setMessage] = useState([]);
-  // const [showbuttombar, setshowbuttombar] = useState(true);
 
   useEffect(() => {
-    // setshowbuttombar(true);
     console.log('I am useeffect');
     fetch('/getdata', {
       method: 'POST',
@@ -21,7 +19,6 @@ const MessageScroll = () => {
 
   return (
     <>
-      <h2>{message.user}</h2>
       <Message User="satyendra singh" Editable={false} UserMessage="please send me code" Likes={25} />
       <div className="bottomBar">
         <div className="loader" />
