@@ -1,7 +1,18 @@
 import React from 'react';
+import { Typography } from '@mui/material';
+import PropTypes from 'prop-types';
 
-function InlineError({ error }) {
-  return <p className="my-1 text-sm text-red-600 font-subMain font-medium">{error}</p>;
+function InlineError(props) {
+  const { error } = props;
+  return (
+    <Typography variant="body2" style={{ color: 'red' }}>
+      {error}
+    </Typography>
+  );
 }
+
+InlineError.propTypes = {
+  error: PropTypes.string.isRequired,
+};
 
 export default InlineError;

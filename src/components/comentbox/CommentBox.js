@@ -1,7 +1,13 @@
+import { Container, Button } from '@mui/material';
+import CancelIcon from '@mui/icons-material/Cancel';
+import SendIcon from '@mui/icons-material/Send';
 import React, { useRef, useState } from 'react';
 import { useOpenReply } from '../message/Message';
+import { useMainContext } from '../../context/Context';
+import './topcommentbox.css';
 
-const CommentBox = () => {
+const CommentBox = (props) => {
+  const { setmessageUpdate } = useMainContext();
   const ChangeOpenReply = useOpenReply();
 
   const message = useRef(null);
@@ -25,42 +31,61 @@ const CommentBox = () => {
   };
   const sendComment = (e) => {
     e.preventDefault();
+    fetch('/postsubcomments', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messageId: props.userKey, messageData: message.current.value }),
+    }).then(() => {
+      setmessageUpdate([1, props.userKey]);
+      message.current.value = '';
+      setenablebtn(true);
+    });
   };
 
   return (
     <>
-      <form>
-        <div>TopCommentBox</div>
-        <section className="section">
-          <input
-            type="text"
-            placeholder="add comment"
-            ref={message}
-            //   autoFocus={props.autoFocus}
-            onFocus={commentFocus}
-            onBlur={commentFocusout}
-            onKeyUp={commentStrok}
-          />
-          {showCommentLine && <div className="comentline" />}
-          {showButtons && (
-            <>
-              <button type="button" className="commentButton" disabled={enablebtn} onClick={sendComment}>
-                Comment
-              </button>
-              <button
-                type="button"
-                className="cancelbutton"
-                onClick={() => {
-                  setshowButtons(false);
-                  ChangeOpenReply();
-                }}
-              >
-                Cancel
-              </button>
-            </>
-          )}
-        </section>
-      </form>
+      <Container>
+        <form>
+          <section className="CommentBox">
+            <input
+              type="text"
+              placeholder="add comment"
+              ref={message}
+              onFocus={commentFocus}
+              onBlur={commentFocusout}
+              onKeyUp={commentStrok}
+            />
+            {showCommentLine && <div className="comentline" />}
+            {showButtons && (
+              <>
+                <Button
+                  type="button"
+                  variant="containedInherit"
+                  className="commentbutton sendbutton"
+                  disabled={enablebtn}
+                  onClick={sendComment}
+                  endIcon={<SendIcon />}
+                >
+                  CommetB
+                </Button>
+                <Button
+                  variant="contained"
+                  color="error"
+                  startIcon={<CancelIcon />}
+                  type="button"
+                  className="commentbutton"
+                  onClick={() => {
+                    setshowButtons(false);
+                    ChangeOpenReply();
+                  }}
+                >
+                  Cancel
+                </Button>
+              </>
+            )}
+          </section>
+        </form>
+      </Container>
     </>
   );
 };

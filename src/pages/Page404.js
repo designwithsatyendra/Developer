@@ -38,9 +38,8 @@ export default function Page404() {
             src="/static/illustrations/illustration_404.svg"
             sx={{ height: 260, mx: 'auto', my: { xs: 5, sm: 10 } }}
           />
-
-          <Button to="/" size="large" variant="contained" component={RouterLink}>
-            Go to Home
+          <Button to="/" type="submit" component={RouterLink} size="large" variant="containedInherit">
+            Go to HomePage
           </Button>
         </ContentStyle>
       </Container>

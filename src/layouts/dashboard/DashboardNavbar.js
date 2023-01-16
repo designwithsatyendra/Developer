@@ -34,7 +34,6 @@ DashboardNavbar.propTypes = {
 };
 
 export default function DashboardNavbar({ onOpenSidebar }) {
-  console.log(onOpenSidebar.value);
   return (
     <>
       <RootStyle>
@@ -45,14 +44,15 @@ export default function DashboardNavbar({ onOpenSidebar }) {
                 <Iconify icon="eva:menu-2-fill" />
               </IconButton>
 
-              <Typography variant="body2" sx={{ flexGrow: 1 }}>
+              <Typography id="mynamestyle1" variant="h6" sx={{ flexGrow: 1 }}>
                 <NavLink id="mynamestyle1" to="/" style={{ textDecoration: 'none' }}>
-                  DESIGNWITHSATYA
+                  <span style={{ color: '#00BFFF' }}>D</span>ESIGN<span style={{ color: '#00BFFF' }}>W</span>ITH
+                  <span style={{ color: '#00BFFF' }}>S</span>ATYA
                 </NavLink>
               </Typography>
               <Stack direction="row" alignItems="center" spacing={{ xs: 1.5, sm: 1.5 }}>
                 <NavLink
-                  to="/dashboard/blogs/blog1"
+                  to="/2023/blogs/blog1"
                   style={{
                     textDecoration: 'none',
                     color: '#fff',

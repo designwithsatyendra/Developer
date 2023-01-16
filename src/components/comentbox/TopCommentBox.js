@@ -1,6 +1,14 @@
+import { Typography, Box, Container, Button } from '@mui/material';
 import React, { useRef, useState } from 'react';
+import CancelIcon from '@mui/icons-material/Cancel';
+import SendIcon from '@mui/icons-material/Send';
+import { useMainContext } from '../../context/Context';
+
+import './topcommentbox.css';
 
 const TopCommentBox = () => {
+  const { setmessageReset, setCommentIncreement } = useMainContext();
+
   const message = useRef(null);
   const [showCommentLine, setshowCommentLine] = useState(false);
   const [showButtons, setshowButtons] = useState(false);
@@ -22,40 +30,72 @@ const TopCommentBox = () => {
   };
   const sendComment = (e) => {
     e.preventDefault();
+    fetch('/newcommnet', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messageData: message.current.value }),
+    }).then(() => {
+      setmessageReset((prestate) => !prestate);
+      setCommentIncreement(10);
+      message.current.value = '';
+      setenablebtn(true);
+    });
   };
 
   return (
     <>
-      <div>TopCommentBox</div>
-      <section className="section">
-        <input
-          type="text"
-          placeholder="add comment"
-          ref={message}
-          //   autoFocus={props.autoFocus}
-          onFocus={commentFocus}
-          onBlur={commentFocusout}
-          onKeyUp={commentStrok}
-        />
-        {showCommentLine && <div className="comentline" />}
-        {showButtons && (
-          <>
-            <button type="button" className="commentButton" disabled={enablebtn} onClick={sendComment}>
-              Comment
-            </button>
-            <button
-              type="button"
-              className="cancelbutton"
-              onClick={() => {
-                setshowButtons(false);
-                message.current.value = '';
-              }}
-            >
-              Cancel
-            </button>
-          </>
-        )}
-      </section>
+      <Container>
+        <Box style={{ display: 'flex', justifyContent: 'center' }}>
+          <Typography className="about" variant="h6" sx={{ mt: 5 }}>
+            Post Comments
+          </Typography>
+        </Box>
+
+        <form>
+          <section className="CommentBox">
+            <input
+              type="text"
+              id="contact_form_name"
+              className="contact_form_name input_field"
+              name="name"
+              ref={message}
+              onFocus={commentFocus}
+              onBlur={commentFocusout}
+              onKeyUp={commentStrok}
+              placeholder="Type Somthing Here...."
+            />
+
+            {showCommentLine && <div className="comentline" />}
+            {showButtons && (
+              <>
+                <Button
+                  type="button"
+                  variant="containedInherit"
+                  className="commentbutton sendbutton"
+                  disabled={enablebtn}
+                  onClick={sendComment}
+                  endIcon={<SendIcon />}
+                >
+                  Commet
+                </Button>
+                <Button
+                  variant="contained"
+                  color="error"
+                  startIcon={<CancelIcon />}
+                  type="button"
+                  className="commentbutton"
+                  onClick={() => {
+                    setshowButtons(false);
+                    message.current.value = '';
+                  }}
+                >
+                  Cancel
+                </Button>
+              </>
+            )}
+          </section>
+        </form>
+      </Container>
     </>
   );
 };

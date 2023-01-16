@@ -1,0 +1,44 @@
+.messagecontainer{
+    position: relative;
+    width: 100%;
+    word-wrap: break-word;
+    padding-left: 50px;
+    margin: 20px 0;
+   
+    
+}
+.fa{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+}
+.messageuser{
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+.messagetext{
+ margin: 5px 0;
+ font-size: 0.9rem; 
+ 
+
+}
+.messageiconscontainer{
+    margin-top: 10px;
+
+}
+.messageiconscontainer >*{
+    display: inline-block;
+    margin-right: 10px;
+    color: gray;
+    cursor: pointer;
+}
+.arrowreplies{
+    margin-top: 10px;
+    cursor: pointer;
+}
+.arrowreplies>*{
+    color: rgb(232, 106, 163);
+}

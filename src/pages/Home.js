@@ -60,9 +60,7 @@ const Home = () => (
   <>
     <RootStyle>
       <UnderRootStyle>
-        <MyTypoGraphy>
-          WELCOME TO DESIGNWITHSATYA <span className="wavehand">👋</span>
-        </MyTypoGraphy>
+        <MyTypoGraphy>WELCOME TO DESIGNWITHSATYA</MyTypoGraphy>
         <Typography variant="h6" sx={{ mb: 2 }}>
           ABOUT ME
         </Typography>

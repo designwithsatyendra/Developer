@@ -3,6 +3,9 @@ import { Navigate, useRoutes } from 'react-router-dom';
 import LogoOnlyLayout from './layouts/LogoOnlyLayout';
 
 import NotFound from './pages/Page404';
+import Register from './pages/LoginPage';
+import Login from './pages/Login';
+import Logout from './pages/Logout';
 // dash and blog layouts
 const DashboardLayout = React.lazy(() => import('./layouts/dashboard'));
 const BlogsLayout = React.lazy(() => import('./bloglayout'));
@@ -14,6 +17,7 @@ const Service = React.lazy(() => import('./components/service/Service'));
 const About = React.lazy(() => import('./pages/About'));
 const Project = React.lazy(() => import('./pages/Project'));
 const BlogPage = React.lazy(() => import('./bloglayout/Blogs/BlogPage'));
+//
 const SourseCode = React.lazy(() => import('./components/soursecode/SourseCode'));
 const BlogHome = React.lazy(() => import('./bloglayout/BlogHome'));
 const Blog2 = React.lazy(() => import('./bloglayout/Blogs/Blog2'));
@@ -21,11 +25,11 @@ const Blog2 = React.lazy(() => import('./bloglayout/Blogs/Blog2'));
 export default function Router() {
   return useRoutes([
     {
-      path: '/dashboard',
+      path: '/2023',
       element: <DashboardLayout />,
       children: [
         {
-          path: 'app',
+          path: 'home',
           element: <DashboardApp />,
         },
         { path: 'contact', element: <Contact /> },
@@ -58,9 +62,12 @@ export default function Router() {
       path: '/',
       element: <LogoOnlyLayout />,
       children: [
-        { path: '/', element: <Navigate to="/dashboard/app" /> },
+        { path: '/', element: <Navigate to="/2023/home" /> },
         { path: '404', element: <NotFound /> },
         { path: '*', element: <Navigate to="/404" /> },
+        { path: 'register', element: <Register /> },
+        { path: 'login', element: <Login /> },
+        { path: 'logout', element: <Logout /> },
       ],
     },
 

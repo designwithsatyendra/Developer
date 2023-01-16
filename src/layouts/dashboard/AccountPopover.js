@@ -1,5 +1,5 @@
-import { useRef, useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import { useRef, useState, useContext, useEffect } from 'react';
+import { Link as RouterLink, NavLink, useNavigate } from 'react-router-dom';
 // @mui
 import { alpha } from '@mui/material/styles';
 import { Box, Divider, Typography, Stack, MenuItem, Avatar, IconButton } from '@mui/material';
@@ -7,6 +7,7 @@ import { Box, Divider, Typography, Stack, MenuItem, Avatar, IconButton } from '@
 import MenuPopover from '../../components/MenuPopover';
 // mocks_
 import account from '../../_mock/account';
+import { UserContext } from '../../App';
 
 // ----------------------------------------------------------------------
 
@@ -17,24 +18,25 @@ const MENU_OPTIONS = [
     linkTo: '/',
   },
   {
-    label: 'Profile',
+    label: 'Register',
     icon: 'eva:person-fill',
-    linkTo: '#',
+    linkTo: '/register',
   },
   {
-    label: 'Settings',
+    label: 'Login',
     icon: 'eva:settings-2-fill',
-    linkTo: '#',
+    linkTo: '/login',
   },
 ];
 
 // ----------------------------------------------------------------------
 
 export default function AccountPopover() {
+  const navigate = useNavigate();
+  const [userData, setUserData] = useState({});
+  const { state } = useContext(UserContext);
   const anchorRef = useRef(null);
-
   const [open, setOpen] = useState(null);
-
   const handleOpen = (event) => {
     setOpen(event.currentTarget);
   };
@@ -42,6 +44,33 @@ export default function AccountPopover() {
   const handleClose = () => {
     setOpen(null);
   };
+
+  const callAboutPage = async () => {
+    try {
+      const res = await fetch('/about', {
+        method: 'GET',
+        headers: {
+          Accept: 'appllication/json',
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+      });
+
+      const data = await res.json();
+      setUserData(data);
+
+      if (!res.status === 200) {
+        const error = new Error(res.error);
+        throw error;
+      }
+    } catch (err) {
+      navigate('/2023/home', { replace: true });
+    }
+  };
+
+  useEffect(() => {
+    callAboutPage();
+  }, []);
 
   return (
     <>
@@ -80,30 +109,43 @@ export default function AccountPopover() {
           },
         }}
       >
-        <Box sx={{ my: 1.5, px: 2.5 }}>
-          <Typography variant="subtitle2" noWrap>
-            {account.displayName}
-          </Typography>
-          <Typography variant="body2" sx={{ color: 'text.secondary' }} noWrap>
-            {account.email}
-          </Typography>
-        </Box>
-
-        <Divider sx={{ borderStyle: 'dashed' }} />
-
-        <Stack sx={{ p: 1 }}>
-          {MENU_OPTIONS.map((option) => (
-            <MenuItem key={option.label} to={option.linkTo} component={RouterLink} onClick={handleClose}>
-              {option.label}
+        {!state ? (
+          <>
+            <Box sx={{ my: 1.5, px: 2.5 }}>
+              <Typography variant="subtitle2" noWrap>
+                {account.displayName}
+              </Typography>
+              <Typography variant="body2" sx={{ color: 'text.secondary' }} noWrap>
+                {account.email}
+              </Typography>
+            </Box>
+            <Divider sx={{ borderStyle: 'dashed' }} />
+            <Stack sx={{ p: 1 }}>
+              {MENU_OPTIONS.map((option) => (
+                <MenuItem key={option.label} to={option.linkTo} component={RouterLink} onClick={handleClose}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </Stack>
+          </>
+        ) : (
+          <>
+            <Box sx={{ my: 1.5, px: 2.5 }}>
+              <Typography variant="subtitle2" noWrap>
+                {userData.name}
+              </Typography>
+              <Typography variant="body2" sx={{ color: 'text.secondary' }} noWrap>
+                {userData.email}
+              </Typography>
+            </Box>
+            <Divider sx={{ borderStyle: 'dashed' }} />
+            <MenuItem onClick={handleClose} sx={{ m: 1 }}>
+              <NavLink style={{ textDecoration: 'none', color: 'inherit' }} to="/logout">
+                Logout
+              </NavLink>
             </MenuItem>
-          ))}
-        </Stack>
-
-        <Divider sx={{ borderStyle: 'dashed' }} />
-
-        <MenuItem onClick={handleClose} sx={{ m: 1 }}>
-          Logout
-        </MenuItem>
+          </>
+        )}
       </MenuPopover>
     </>
   );
